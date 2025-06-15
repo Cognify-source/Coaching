@@ -42,29 +42,29 @@ header.hero {
 /* Testimonials-slider */
 .testimonial-slider {
   position: relative;
-  width: 80vw;          /* 80% av viewport-bredden */
-  max-width: 900px;      /* men högst 900px */
+  width: 80vw;
+  max-width: 900px;
   margin: 2rem auto;
 }
 .slide-window {
   position: relative;
   overflow: hidden;
-  min-height: 120px;     /* justera vid behov */
+  min-height: 120px; /* justera efter textmängd */
 }
 .testimonial {
   position: absolute;
-  top: 0;
+  top: 50%;               /* flytta mitt i fönstret vertikalt */
   left: 0;
   width: 100%;
   box-sizing: border-box;
   padding: 1rem;
-  background: transparent;    /* transparent bakgrund */
+  background: transparent;
   border-radius: 8px;
   text-align: center;
   opacity: 0;
 }
 
-/* Innehållsstyling */
+/* Textstyling */
 .testimonial p {
   margin-bottom: 0.5rem;
   font-style: italic;
@@ -89,15 +89,9 @@ header.hero {
   user-select: none;
   z-index: 10;
 }
-.left-arrow {
-  left: -1.5rem;       /* utanför textområdet */
-}
-.right-arrow {
-  right: -1.5rem;      /* utanför textområdet */
-}
-.arrow:hover {
-  background: rgba(255,255,255,1);
-}
+.left-arrow  { left: -1.5rem; }
+.right-arrow { right: -1.5rem; }
+.arrow:hover { background: rgba(255,255,255,1); }
 
 /* Kontaktformulär */
 form {
