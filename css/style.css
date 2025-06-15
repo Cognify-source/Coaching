@@ -69,6 +69,7 @@ header.hero {
 }
 
 /* 5. Logotyp & underrubrik */
+/* Tredubblad luft runt loggan */
 header.hero .hero-content {
   position: relative;
   z-index: 1000;
@@ -85,16 +86,16 @@ header.hero .hero-content p {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin-top: 0.3em;
-  margin-bottom: 0.5em;  /* ökat till 0.5em */
+  margin-top: 0.9em;     /* tredubblat (0.3em → 0.9em) */
+  margin-bottom: 1.5em;  /* tredubblat (0.5em → 1.5em) */
   text-transform: none;
 }
 .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   text-transform: uppercase;
-  margin-top: 0.5em;     /* ökat till 0.5em */
-  margin-bottom: 0.3em;
+  margin-top: 1.5em;     /* tredubblat (0.5em → 1.5em) */
+  margin-bottom: 1.5em;  /* tredubblat (0.3em → 0.9em but här satt vi till 1.5em för enhetlighet) */
 }
 
 /* 6. Iframe för undersidor */
