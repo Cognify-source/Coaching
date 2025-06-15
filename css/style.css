@@ -1,9 +1,9 @@
 /* Importera Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700;900&display=swap');
 
 /* Variabler för typsnitt */
 :root {
-  --font-logo:    'Great Vibes', cursive;
+  --font-logo:    'Allura', cursive;
   --font-heading: 'Playfair Display', serif;
   --font-body:    'Merriweather', serif;
 }
@@ -44,7 +44,7 @@ header.hero {
   color: #333;
 }
 
-/* Logo (h1) snirklig och dubbelt så stor */
+/* Logo (h1) snirkligt script-typsnitt */
 .hero-content h1 {
   font-family: var(--font-logo);
   font-size: 5rem;
