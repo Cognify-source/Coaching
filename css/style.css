@@ -33,7 +33,6 @@ body {
 }
 
 /* 4. Header & nav */
-/* Gradient startar och slutar ~40 “enheter” mörkare */
 header.hero {
   background-image:
     linear-gradient(
@@ -136,7 +135,7 @@ header.hero .hero-content p {
 /* 9. Testimonials-slider */
 .testimonial-slider {
   position: relative;
-  width: 56vw;       /* bredd justerad enligt tidigare */
+  width: 56vw;
   max-width: 900px;
   margin: 1rem auto;
 }
@@ -147,7 +146,7 @@ header.hero .hero-content p {
 }
 .testimonial {
   position: absolute;
-  top: 25%;          /* flyttat upp ytterligare ca 2 rader */
+  top: 10%;         /* flyttat upp ytterligare ca 2 rader */
   left: 0;
   width: 100%;
   padding: 1rem;
@@ -191,7 +190,8 @@ form {
 label {
   font-size: 0.9rem;
 }
-input, textarea {
+input,
+textarea {
   padding: 0.4rem 0.6rem;
   font-size: 0.9rem;
   border: 1px solid #ccc;
