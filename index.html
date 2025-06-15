@@ -16,18 +16,16 @@
       <a href="kontakt.html"  target="contentFrame">Kontakt</a>
     </nav>
     <div class="hero-content">
-      <h1>Soul Flow Coaching</h1>
+      <h1>Soul   Flow   Coaching</h1>
       <p>Coaching för balans, harmoni och inre frid.</p>
     </div>
   </header>
 
   <!-- Innehålls-iframe -->
-  <iframe
-    id="content-frame"
-    name="contentFrame"
-    src="om-mig.html"
-    frameborder="0"
-  ></iframe>
+  <iframe id="content-frame"
+          name="contentFrame"
+          src="om-mig.html"
+          frameborder="0"></iframe>
 
   <!-- Testimonials -->
   <section id="testimonials" class="section">
@@ -36,22 +34,7 @@
       <button class="arrow left-arrow">&#x25C0;</button>
       <div class="slide-window">
         <div class="testimonial-slide">
-          <div class="testimonial">
-            <p>“Fantastiskt!”</p>
-            <span>– Klient A</span>
-          </div>
-          <div class="testimonial">
-            <p>“Fredriks coaching var otroligt hjälpsam. Jag kände mig stärkt och mer närvarande i vardagen.”</p>
-            <span>– Klient B</span>
-          </div>
-          <div class="testimonial">
-            <p>“Jag hade länge känt mig splittrad och osäker på hur jag skulle hantera stress. Genom Soul   Flow   Coaching lärde jag mig möta mina inre delar med empati och hitta en lugn plats inom mig. Rekommenderas starkt!”</p>
-            <span>– Klient C</span>
-          </div>
-          <div class="testimonial">
-            <p>“Efter flera års sökande på olika terapiformer och självhjälpsböcker, hittade jag äntligen ett arbete som talade direkt till mitt inre. Soul   Flow   Coaching hjälpte mig att se mönster jag burit med mig sedan barndomen. Resultatet blev en djupare förståelse, ökad självkärlek och en varaktig känsla av inre frid jag tidigare bara drömt om.”</p>
-            <span>– Klient D</span>
-          </div>
+          <!-- Här injekteras data/testimonials.html via JS -->
         </div>
       </div>
       <button class="arrow right-arrow">&#x25B6;</button>
@@ -63,19 +46,6 @@
     <p>&copy; 2025 Soul   Flow   Coaching</p>
   </footer>
 
-  <script src="js/testimonials.js"></script>
-  <script>
-    let baseFrameHeight = null;
-    function resizeFrame() {
-      const iframe = document.getElementById('content-frame');
-      const doc = iframe.contentWindow.document;
-      const contentHeight = doc.body.scrollHeight;
-      if (baseFrameHeight === null) baseFrameHeight = contentHeight;
-      iframe.style.height = baseFrameHeight + 'px';
-    }
-    window.addEventListener('load', resizeFrame);
-    document.getElementById('content-frame')
-            .addEventListener('load', resizeFrame);
-  </script>
+  <script src="js/testimonials.js" defer></script>
 </body>
 </html>
