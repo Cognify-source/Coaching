@@ -33,7 +33,7 @@
   <section id="testimonials" class="section">
     <h2>Vad klienter säger</h2>
     <div class="testimonial-slider">
-      <button class="arrow left-arrow">&#10094;</button>
+      <button class="arrow left-arrow">&#x25C0;</button>
       <div class="slide-window">
         <div class="testimonial-slide">
           <div class="testimonial">
@@ -54,7 +54,7 @@
           </div>
         </div>
       </div>
-      <button class="arrow right-arrow">&#10095;</button>
+      <button class="arrow right-arrow">&#x25B6;</button>
     </div>
   </section>
 
@@ -65,13 +65,13 @@
 
   <script src="js/testimonials.js"></script>
   <script>
-    // Justera iframe-höjd efter innehåll
     function resizeFrame() {
       const iframe = document.getElementById('content-frame');
       iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
     }
     window.addEventListener('load', resizeFrame);
-    document.getElementById('content-frame').addEventListener('load', resizeFrame);
+    document.getElementById('content-frame')
+            .addEventListener('load', resizeFrame);
   </script>
 </body>
 </html>
