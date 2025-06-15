@@ -38,8 +38,7 @@ header.hero {
   text-align: center;
   position: fixed;
   top: 0; left: 0;
-  width: 100%;
-  z-index: 1000;
+  width: 100%; z-index: 1000;
 }
 .nav a {
   margin: 0 1rem;
@@ -52,11 +51,14 @@ header.hero {
 }
 
 /* 5. Logo & underrubrik */
+/*   - lägg till margin-top för extra luft ovanför loggan */
+/*   - text-shadow för skugga */
 .hero-content h1 {
   font-family: var(--font-logo) !important;
-  font-size: 8.5rem;        /* 70% större än tidigare 5rem */
-  margin-bottom: 0.5rem;
-  color: var(--color-logo); /* vit logga */
+  font-size: 8.5rem;
+  margin: 1.5rem 0 0.5rem;         /* 1.5rem luft ovan, 0.5rem under */
+  color: var(--color-logo);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 .hero-content p {
   font-family: var(--font-body);
@@ -66,18 +68,14 @@ header.hero {
 
 /* 6. Iframe för undersidor */
 #content-frame {
-  width: 80vw;
-  max-width: 900px;
+  width: 80vw; max-width: 900px;
   margin: 2rem auto;
-  display: block;
-  border: none;
+  display: block; border: none;
 }
 
 /* 7. Gemensam sektion */
 .section {
-  padding: 3rem 1rem;
-  max-width: 800px;
-  margin: auto;
+  padding: 3rem 1rem; max-width: 800px; margin: auto;
 }
 .section h2 {
   font-family: var(--font-heading);
@@ -89,65 +87,34 @@ header.hero {
 
 /* 8. Om-mig layout */
 .about-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 2rem;
+  display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem;
 }
 .about-img {
-  flex: 0 0 200px;
-  max-width: 200px;
-  border-radius: 8px;
+  flex: 0 0 200px; max-width: 200px; border-radius: 8px;
 }
-.about-text p {
-  margin-bottom: 1rem;
-}
+.about-text p { margin-bottom: 1rem; }
 
 /* 9. Testimonials-slider */
 .testimonial-slider {
-  position: relative;
-  width: 100%;
-  margin: 2rem auto;
+  position: relative; width: 100%; margin: 2rem auto;
 }
 .slide-window {
-  position: relative;
-  overflow: hidden;
-  min-height: 120px;
+  position: relative; overflow: hidden; min-height: 120px;
 }
 .testimonial {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  padding: 1rem;
-  background: transparent;
-  border-radius: 8px;
-  text-align: center;
-  opacity: 0;
+  position: absolute; top: 50%; left: 0;
+  width: 100%; padding: 1rem; background: transparent;
+  border-radius: 8px; text-align: center; opacity: 0;
 }
-.testimonial p {
-  margin-bottom: 0.5rem;
-  font-style: italic;
-}
-.testimonial span {
-  font-size: 0.9rem;
-  color: var(--color-text);
-  display: block;
-}
+.testimonial p { margin-bottom: 0.5rem; font-style: italic; }
+.testimonial span { font-size: 0.9rem; color: var(--color-text); display: block; }
 
 /* 10. Pilar */
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--color-secondary);
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0.2rem 0.6rem;
-  border-radius: 50%;
-  user-select: none;
-  z-index: 10;
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: var(--color-secondary); border: none;
+  font-size: 2rem; cursor: pointer; padding: 0.2rem 0.6rem;
+  border-radius: 50%; user-select: none; z-index: 10;
 }
 .left-arrow  { left: -1.5rem; }
 .right-arrow { right: -1.5rem; }
@@ -155,40 +122,27 @@ header.hero {
 
 /* 11. Formulär */
 form {
-  display: grid;
-  gap: 0.6rem;
-  font-family: var(--font-body);
-  font-size: 0.9rem; /* något mindre text */
+  display: grid; gap: 0.6rem;
+  font-family: var(--font-body); font-size: 0.9rem;
 }
-label {
-  font-size: 0.9rem;
-}
+label { font-size: 0.9rem; }
 input, textarea {
-  padding: 0.4rem 0.6rem;    /* mindre, nättare fält */
-  font-size: 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.4rem 0.6rem; font-size: 0.9rem;
+  border: 1px solid #ccc; border-radius: 4px;
 }
 button {
-  padding: 0.6rem 1rem;      /* mindre knapp */
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 0.6rem 1rem; font-size: 1rem;
+  border: none; border-radius: 4px; cursor: pointer;
   font-family: var(--font-heading);
   background: var(--color-primary);
   color: var(--color-logo);
 }
-button:hover {
-  opacity: 0.9;
-}
+button:hover { opacity: 0.9; }
 
 /* 12. Footer */
 .footer {
-  text-align: center;
-  padding: 1rem;
+  text-align: center; padding: 1rem;
   background: var(--color-primary);
-  font-size: 0.9rem;
-  font-family: var(--font-body);
+  font-size: 0.9rem; font-family: var(--font-body);
   color: var(--color-logo);
 }
