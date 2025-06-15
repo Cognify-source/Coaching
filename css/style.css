@@ -33,10 +33,11 @@ body {
 }
 
 /* 4. Header & nav */
+/* Relativ sökväg till bilden: css/ → images/ */
 header.hero {
   background-image:
     linear-gradient(rgba(178,172,136,0.7), rgba(178,172,136,0.7)),
-    url('/images/IMG_4550.jpg');
+    url('../images/IMG_4550.jpg');
   background-size: cover;
   background-position: center;
   padding: 2rem 1rem;
@@ -66,7 +67,7 @@ header.hero {
   color: var(--color-nav-hover);
 }
 
-/* 5. Text-shadow på all text i headern (gäller logga och underrubrik) */
+/* 5. Text-shadow på logga & underrubrik */
 header.hero .hero-content h1,
 header.hero .hero-content p {
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
@@ -160,9 +161,8 @@ header.hero .hero-content p {
 .arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
   background: none; border: none;
-  color: var(--color-primary);
-  font-size: 2rem; cursor: pointer;
-  padding: 0; user-select: none; z-index: 10;
+  color: var(--color-primary); font-size: 2rem;
+  cursor: pointer; padding: 0; user-select: none; z-index: 10;
 }
 .left-arrow  { left: -1.5rem; }
 .right-arrow { right: -1.5rem; }
@@ -170,29 +170,21 @@ header.hero .hero-content p {
 
 /* 12. Formulär */
 form {
-  display: grid;
-  gap: 0.6rem;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
+  display: grid; gap: 0.6rem;
+  font-family: var(--font-body); font-size: 0.9rem;
 }
 label {
   font-size: 0.9rem;
 }
 input, textarea {
-  padding: 0.4rem 0.6rem;
-  font-size: 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.4rem 0.6rem; font-size: 0.9rem;
+  border: 1px solid #ccc; border-radius: 4px;
 }
 button {
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 0.6rem 1rem; font-size: 1rem;
+  border: none; border-radius: 4px; cursor: pointer;
   font-family: var(--font-heading);
-  background: var(--color-primary);
-  color: var(--color-logo);
+  background: var(--color-primary); color: var(--color-logo);
 }
 button:hover {
   opacity: 0.9;
@@ -200,10 +192,7 @@ button:hover {
 
 /* 13. Footer */
 .footer {
-  text-align: center;
-  padding: 1rem;
-  background: var(--color-primary);
-  font-size: 0.9rem;
-  font-family: var(--font-body);
-  color: var(--color-logo);
+  text-align: center; padding: 1rem;
+  background: var(--color-primary); font-size: 0.9rem;
+  font-family: var(--font-body); color: var(--color-logo);
 }
