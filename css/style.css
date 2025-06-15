@@ -33,14 +33,14 @@ body {
 }
 
 /* 4. Header & nav */
-/* Vertikal padding 3× (0.9rem), horisontell som tidigare */
+/* Vertikal padding 0.9rem, horisontell 2rem */
 header.hero {
   background-image:
     linear-gradient(rgba(138,132,96,0.8), rgba(215,215,215,0.8)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
-  padding: 0.9rem 2rem;  /* 0.9rem top/bottom, 2rem left/right */
+  padding: 0.9rem 2rem;  /* top/bottom 0.9rem, left/right 2rem */
   text-align: center;
   position: fixed;
   top: 0; left: 0;
@@ -67,28 +67,28 @@ header.hero {
 }
 
 /* 5. Logotyp & underrubrik */
-/* Sätt låg line-height och negativa marginaler för att kompakt pressa ihop */
+/* Återställ text-transform och dubbla utrymmet kring logotypen */
 header.hero .hero-content h1,
 header.hero .hero-content p {
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
-  line-height: 1;          /* pressa ihop raderna */
-  margin: 0;               /* ta bort standardmarginaler */
+  line-height: 1;   /* kompakt radhöjd */
+  margin: 0;
+  padding: 0;
 }
 .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 13rem;
-  /* negativ margin för att ytterligare dra ihop luft om det behövs */
-  margin-top: -0.1em;
-  margin-bottom: -0.05em;
+  margin-top: 0.2em;    /* dubbelt mot tidigare negativa */
+  margin-bottom: 0.1em; /* dubbelt mot tidigare negativa */
   text-transform: none;
 }
 .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
-  /* dra upp underrubriken */
-  margin-top: -0.1em;
+  text-transform: uppercase;  /* återställ versaler */
+  margin-top: 0;           /* inget extra mellanrum */
 }
 
 /* 6. Iframe för undersidor */
@@ -207,7 +207,9 @@ button {
   border: none; border-radius: 4px;
   cursor: pointer; font-size: 1rem;
 }
-button:hover { opacity: 0.9; }
+button:hover {
+  opacity: 0.9;
+}
 .contact-info {
   margin-top: 2rem;
   text-align: center;
