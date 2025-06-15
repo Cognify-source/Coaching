@@ -41,8 +41,8 @@ header.hero {
   background-position: center;
   padding: 2rem 1rem;
   text-align: center;
-  position: fixed; top: 0; left: 0;
-  width: 100%; z-index: 1000;
+  position: fixed;
+  top: 0; left: 0; width: 100%; z-index: 1000;
 }
 .nav {
   display: inline-block;
@@ -89,7 +89,8 @@ header.hero .hero-content p {
 #content-frame {
   margin: 2rem auto;
   display: block;
-  width: 80vw; max-width: 900px;
+  width: 80vw;
+  max-width: 900px;
   border: none;
 }
 
@@ -124,7 +125,8 @@ header.hero .hero-content p {
   background: var(--color-primary);
   color: var(--color-logo);
   padding: 1.5rem 1rem;
-  width: 100%; max-width: none;
+  width: 100%;
+  max-width: none;
   margin: 0;
 }
 #testimonials h2 {
@@ -134,7 +136,8 @@ header.hero .hero-content p {
 /* 9. Testimonials-slider */
 .testimonial-slider {
   position: relative;
-  width: 80vw; max-width: 900px;
+  width: 80vw;
+  max-width: 900px;
   margin: 1rem auto;
 }
 .slide-window {
@@ -144,7 +147,7 @@ header.hero .hero-content p {
 }
 .testimonial {
   position: absolute;
-  top: 40%;      /* flyttat upp ytterligare ungefär två textrader */
+  top: 35%;      /* flyttat upp ytterligare för att hamna två textrader högre */
   left: 0;
   width: 100%;
   padding: 1rem;
@@ -176,12 +179,13 @@ header.hero .hero-content p {
   z-index: 10;
 }
 .left-arrow  { left: -1.5rem; }
-.right-arrow { right: -1.5rem; }
+.right-arrow { right: 1.5rem; }
 .arrow:hover { color: var(--color-nav-hover); }
 
 /* 11. Formulär & kontakt-info */
 form {
-  display: grid; gap: 0.6rem;
+  display: grid;
+  gap: 0.6rem;
   font-family: var(--font-body);
   font-size: 0.9rem;
 }
