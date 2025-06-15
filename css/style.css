@@ -1,20 +1,20 @@
 /* 1. Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
 
 /* 2. Typsnitts- & färgvariabler */
 :root {
   --font-logo:      'Ballet', cursive;
-  --font-heading:   'Montserrat', sans-serif;
+  --font-heading:   'Montserrat', sans-serif; /* rent, elegant */
   --font-body:      'Merriweather', serif;
 
-  --color-bg:       #FAF9F6;   /* varm off-white */
-  --color-primary:  #B2AC88;   /* sage-grön */
-  --color-secondary:#E6E6FA;   /* lavendel */
-  --color-accent:   #FFAEBC;   /* mjuk rosa */
-  --color-text:     #333333;   /* mörkgrå */
-  --color-logo:     #FFFFFF;   /* vit logga */
+  --color-bg:       #FAF9F6;   
+  --color-primary:  #B2AC88;   
+  --color-secondary:#E6E6FA;   
+  --color-accent:   #FFAEBC;   
+  --color-text:     #333333;   
+  --color-logo:     #FFFFFF;   /* vit logga/rubrik */
 }
 
 /* 3. Reset + grundinställningar */
@@ -32,40 +32,42 @@ body {
 }
 
 /* 4. Header & nav */
-/* Alla texter i headern uppercase, med det eleganta heading-typsnittet */
+/*   - logga (h1) i standard-case, vit, ingen uppercase-tving */
 header.hero {
   background: var(--color-primary);
   padding: 2rem 1rem;
   text-align: center;
-  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-  text-transform: uppercase;
+  position: fixed;
+  top: 0; left: 0; width: 100%; z-index: 1000;
 }
 .nav a {
   margin: 0 1rem;
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-logo);
   font-family: var(--font-heading);
   font-weight: 700;
+  text-transform: uppercase;  /* rubriker i versaler */
 }
 .nav a:hover {
   color: var(--color-accent);
 }
 
 /* 5. Logo & underrubrik */
-/* Loggan kvar i script, underrubriken uppercase */
+/*   - h1 behåller sitt fall, är vit och har skugga */
+/*   - p är vit och versaler */
 .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-size: 8.5rem;
   margin: 1.5rem 0 0.5rem;
   color: var(--color-logo);
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-  /* Obwohl header-text-transform applies, logo is script, keep it uppercase */
-  text-transform: uppercase;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  text-transform: none;   /* behåll “Soul Flow” som du skrev */
 }
 .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
-  color: var(--color-text);
+  color: var(--color-logo);
+  text-transform: uppercase;  /* underrubrik i versaler */
 }
 
 /* 6. Iframe för undersidor */
@@ -89,8 +91,6 @@ header.hero {
   margin-bottom: 1rem;
   text-align: center;
   color: var(--color-text);
-  text-transform: uppercase;
-  font-weight: 700;
 }
 
 /* 8. Om-mig layout */
