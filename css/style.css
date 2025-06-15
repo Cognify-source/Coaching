@@ -33,11 +33,11 @@ body {
 }
 
 /* 4. Header & nav */
-/* Bakgrund: grön overlay + din bild */
+/* Nu med absolut sökväg till din bild så den laddas från projektets rot/images/ */
 header.hero {
   background-image:
     linear-gradient(rgba(178,172,136,0.7), rgba(178,172,136,0.7)),
-    url('../images/img_4550.jpg');
+    url('/images/img_4550.jpg');
   background-size: cover;
   background-position: center;
   padding: 2rem 1rem;
@@ -136,8 +136,7 @@ header.hero {
 }
 .testimonial {
   position: absolute;
-  top: 50%;
-  left: 0;
+  top: 50%; left: 0;
   width: 100%;
   padding: 1rem;
   background: transparent;
@@ -157,17 +156,11 @@ header.hero {
 
 /* 10. Pilar – solida trianglar utan bakgrund */
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: none; border: none;
   color: var(--color-primary);
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0;
-  user-select: none;
-  z-index: 10;
+  font-size: 2rem; cursor: pointer;
+  padding: 0; user-select: none; z-index: 10;
 }
 .left-arrow  { left: -1.5rem; }
 .right-arrow { right: -1.5rem; }
@@ -175,10 +168,8 @@ header.hero {
 
 /* 11. Formulär */
 form {
-  display: grid;
-  gap: 0.6rem;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
+  display: grid; gap: 0.6rem;
+  font-family: var(--font-body); font-size: 0.9rem;
 }
 label {
   font-size: 0.9rem;
