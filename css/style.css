@@ -68,7 +68,7 @@ header.hero {
   color: var(--color-nav-hover);
 }
 
-/* 5. Logos & underrubrik */
+/* 5. Logotyp & underrubrik */
 header.hero .hero-content h1,
 header.hero .hero-content p {
   color: var(--color-logo);
@@ -76,8 +76,8 @@ header.hero .hero-content p {
 }
 .hero-content h1 {
   font-family: var(--font-logo) !important;
-  font-weight: normal;      /* Gör logotypen tunnare */
-  font-size: 8.5rem;
+  font-weight: normal;               
+  font-size: 14.875rem; /* 8.5rem * 1.75 */
   margin: 1.5rem 0 0.5rem;
   text-transform: none;
 }
@@ -147,7 +147,7 @@ header.hero .hero-content p {
 }
 .testimonial {
   position: absolute;
-  top: 0%;  /* ligger som tidigare, ingen ändring här */
+  top: 5%;
   left: 0;
   width: 100%;
   padding: 1rem;
@@ -188,7 +188,6 @@ header.hero .hero-content p {
 form {
   display: grid;
   gap: 0.6rem;
-  font-family: var(--font-body);
 }
 label {
   font-size: 0.9rem;
