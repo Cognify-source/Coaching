@@ -65,10 +65,20 @@
 
   <script src="js/testimonials.js"></script>
   <script>
+    // Mät och spara bas‐höjden från om-mig.html, använd sedan samma höjd för alla undersidor
+    let baseFrameHeight = null;
     function resizeFrame() {
       const iframe = document.getElementById('content-frame');
-      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+      const doc = iframe.contentWindow.document;
+      const contentHeight = doc.body.scrollHeight;
+      if (baseFrameHeight === null) {
+        // Första gången (när om-mig.html laddas) sparar vi höjden
+        baseFrameHeight = contentHeight;
+      }
+      // Sätt alltid iframe till den sparade bas‐höjden
+      iframe.style.height = baseFrameHeight + 'px';
     }
+    // Kör resizeFrame vid första load och varje gång iframe laddar ny sida
     window.addEventListener('load', resizeFrame);
     document.getElementById('content-frame')
             .addEventListener('load', resizeFrame);
