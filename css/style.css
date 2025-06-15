@@ -18,7 +18,7 @@
   --color-nav-hover:  #B2C69C;
 }
 
-/* 3. Reset + grundinställningar */
+/* 3. Reset + basinställningar */
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +41,8 @@ header.hero {
   background-position: center;
   padding: 2rem 1rem;
   text-align: center;
-  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  position: fixed; top: 0; left: 0;
+  width: 100%; z-index: 1000;
 }
 .nav {
   display: inline-block;
@@ -53,66 +54,60 @@ header.hero {
   font-size: 1.125rem;
   font-weight: normal;
   text-transform: uppercase;
+  margin: 0 1.5rem;
   position: relative;
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
 }
 .nav a:not(:last-child)::after {
   content: "|";
-  display: inline-block;
-  margin: 0 1.5rem;
+  position: absolute;
+  left: 100%; top: 0;
+  margin-left: 1.5rem;
   color: var(--color-logo);
 }
 .nav a:hover {
   color: var(--color-nav-hover);
 }
-
-/* 5. Text-shadow på logga & underrubrik */
 header.hero .hero-content h1,
 header.hero .hero-content p {
+  color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
 }
-
-/* 6. Logo & underrubrik */
 .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-size: 8.5rem;
   margin: 1.5rem 0 0.5rem;
-  color: var(--color-logo);
   text-transform: none;
 }
 .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
-  color: var(--color-logo);
   text-transform: uppercase;
 }
 
-/* 7. Iframe för undersidor */
+/* 5. Iframe för undersidor */
 #content-frame {
-  width: 80vw;
-  max-width: 900px;
   margin: 2rem auto;
   display: block;
+  width: 80vw; max-width: 900px;
   border: none;
 }
 
-/* 8. Sektioner */
+/* 6. Sektioner */
 .section {
-  padding: 3rem 1rem;
+  margin: 0 auto;
   max-width: 800px;
-  margin: auto;
+  padding: 3rem 1rem;
 }
 .section h2 {
   font-family: var(--font-heading);
   font-size: 1.8rem;
-  margin-bottom: 1rem;
   text-align: center;
-  color: var(--color-text);
   text-transform: uppercase;
-  font-weight: normal;
+  margin-bottom: 1rem;
 }
 
-/* 9. Om-mig: text centrerad och porträtt mindre */
+/* 7. Om-mig */
 #om-mig {
   text-align: center;
 }
@@ -120,31 +115,27 @@ header.hero .hero-content p {
   display: block;
   margin: 2rem auto 0;
   max-width: 200px;
-  width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
-/* 10. Testimonials-sektionen: fullbredd, mindre luft och vit text */
+/* 8. Testimonials */
 #testimonials {
-  background-color: var(--color-primary);
-  padding: 1.5rem 1rem;      /* mindre vertikalt utrymme */
-  width: 100%;
-  max-width: none;           /* override .section */
+  background: var(--color-primary);
+  color: var(--color-logo);
+  padding: 1.5rem 1rem;
+  width: 100%; max-width: none;
   margin: 0;
-  color: var(--color-logo);  /* all text vit */
 }
 #testimonials h2 {
   color: var(--color-logo);
-  margin-bottom: 1rem;
 }
 
-/* 11. Testimonials-slider */
+/* 9. Testimonials-slider */
 .testimonial-slider {
   position: relative;
-  width: 80vw;
-  max-width: 900px;
-  margin: 1rem auto;         /* mindre luft ovan/below */
+  width: 80vw; max-width: 900px;
+  margin: 1rem auto;
 }
 .slide-window {
   position: relative;
@@ -152,62 +143,81 @@ header.hero .hero-content p {
   min-height: 120px;
 }
 .testimonial {
-  position: absolute; top: 50%; left: 0;
-  width: 100%; padding: 1rem;
-  background: transparent; border-radius: 8px;
-  text-align: center; opacity: 0;
+  position: absolute;
+  top: 48%;      /* finjusterat för vertikal mittcentrering */
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  opacity: 0;
+  text-align: center;
+  transition: transform 0.5s, opacity 0.5s;
 }
 .testimonial p {
-  margin-bottom: 0.5rem; font-style: italic;
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 .testimonial span {
-  font-size: 0.9rem; color: var(--color-logo); display: block;
-}
-
-/* 12. Pilar – solida trianglar utan bakgrund */
-.arrow {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  background: none; border: none;
-  color: var(--color-logo); font-size: 2rem;
-  cursor: pointer; padding: 0; user-select: none; z-index: 10;
-}
-.left-arrow  { left: -1.5rem; }
-.right-arrow { right: -1.5rem; }
-.arrow:hover { color: var(--color-accent); }
-
-/* 13. Formulär */
-form {
-  display: grid; gap: 0.6rem;
-  font-family: var(--font-body); font-size: 0.9rem;
-}
-label { font-size: 0.9rem; }
-input, textarea {
-  padding: 0.4rem 0.6rem; font-size: 0.9rem;
-  border: 1px solid #ccc; border-radius: 4px;
-}
-button {
-  padding: 0.6rem 1rem; font-size: 1rem;
-  border: none; border-radius: 4px; cursor: pointer;
-  font-family: var(--font-heading);
-  background: var(--color-secondary);
-  color: var(--color-logo);
-}
-button:hover { opacity: 0.9; }
-
-/* 14. Kontakt-info */
-.contact-info {
-  margin-top: 2rem;
-  text-align: center;
-  font-family: var(--font-body);
+  display: block;
   font-size: 0.9rem;
 }
 
-/* 15. Footer: minskad padding för mindre höjd */
+/* 10. Pilar – centrerade efter huvudinnehåll */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  background: none;
+  border: none;
+  color: var(--color-logo);
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 0;
+  z-index: 10;
+}
+.left-arrow  { left: -1.5rem; }
+.right-arrow { right: -1.5rem; }
+.arrow:hover { color: var(--color-nav-hover); }
+
+/* 11. Formulär & kontakt-info */
+form {
+  display: grid; gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+label {
+  font-size: 0.9rem;
+}
+input, textarea {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  padding: 0.6rem 1rem;
+  font-family: var(--font-heading);
+  background: var(--color-secondary);
+  color: var(--color-logo);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+button:hover {
+  opacity: 0.9;
+}
+.contact-info {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* 12. Footer – optimerad höjd */
 .footer {
   text-align: center;
   padding: 0.5rem 1rem;
   background: var(--color-primary);
-  font-size: 0.9rem;
-  font-family: var(--font-body);
   color: var(--color-logo);
+  font-size: 0.9rem;
 }
