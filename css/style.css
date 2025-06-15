@@ -71,14 +71,14 @@ header.hero {
 }
 
 /* 6. Logotyp & underrubrik */
-/* Flex + gap för luft ovanför, margin på h1/p för luft under och ovan */
+/* Använd flex + gap för luft ovanför loggan, gap nu dubbelt (3em) */
 header.hero .hero-content {
   position: relative;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5em; /* luft mellan nav och logga */
+  gap: 3em; /* dubbelt mot tidigare 1.5em */
 }
 header.hero .hero-content h1,
 header.hero .hero-content p {
@@ -92,7 +92,7 @@ header.hero .hero-content p {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin-bottom: 1.5em; /* ny luft under loggan */
+  margin-bottom: 1.5em; /* luft under loggan */
   text-transform: none;
 }
 .hero-content p {
