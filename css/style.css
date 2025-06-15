@@ -33,14 +33,14 @@ body {
 }
 
 /* 4. Header & nav */
-/* Vertikal padding 0.9rem, horisontell 2rem */
+/* Öka vertikal padding med ca 25%: från 0.9rem → 1.125rem */
 header.hero {
   background-image:
     linear-gradient(rgba(138,132,96,0.8), rgba(215,215,215,0.8)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
-  padding: 0.9rem 2rem;  /* top/bottom 0.9rem, left/right 2rem */
+  padding: 1.125rem 2rem;  /* 1.125rem top/bottom, 2rem left/right */
   text-align: center;
   position: fixed;
   top: 0; left: 0;
@@ -67,12 +67,12 @@ header.hero {
 }
 
 /* 5. Logotyp & underrubrik */
-/* Återställ text-transform och dubbla utrymmet kring logotypen */
+/* Behåll kompakt radhöjd, ingen extra marginal */
 header.hero .hero-content h1,
 header.hero .hero-content p {
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
-  line-height: 1;   /* kompakt radhöjd */
+  line-height: 1;
   margin: 0;
   padding: 0;
 }
@@ -80,15 +80,15 @@ header.hero .hero-content p {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 13rem;
-  margin-top: 0.2em;    /* dubbelt mot tidigare negativa */
-  margin-bottom: 0.1em; /* dubbelt mot tidigare negativa */
+  margin-top: 0.2em;
+  margin-bottom: 0.1em;
   text-transform: none;
 }
 .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
-  text-transform: uppercase;  /* återställ versaler */
-  margin-top: 0;           /* inget extra mellanrum */
+  text-transform: uppercase;
+  margin-top: 0;
 }
 
 /* 6. Iframe för undersidor */
