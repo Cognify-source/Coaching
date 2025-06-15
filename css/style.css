@@ -8,7 +8,7 @@ body {
   font-family: sans-serif;
   line-height: 1.6;
   color: #333;
-  padding-top: 160px; /* Lyfta innehåll under sticky headern */
+  padding-top: 160px; /* Lyft innehåll under headern */
 }
 
 /* Sticky header */
@@ -64,7 +64,6 @@ header.hero {
 }
 .testimonial {
   flex: 0 0 100%;
-  box-sizing: border-box;
   padding: 1rem;
   background: #eef;
   border-radius: 8px;
@@ -91,6 +90,7 @@ header.hero {
   padding: 0.2rem 0.6rem;
   border-radius: 50%;
   user-select: none;
+  z-index: 10; /* säkerställ att de syns över slidern */
 }
 .left-arrow {
   left: 1rem;
