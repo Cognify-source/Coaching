@@ -1,10 +1,11 @@
 /* Importera Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@400;700&family=Playfair+Display:wght@400;700;900&display=swap');
 
 /* Variabler för typsnitt */
 :root {
+  --font-logo:    'Great Vibes', cursive;
   --font-heading: 'Playfair Display', serif;
-  --font-body:    'Open Sans', sans-serif;
+  --font-body:    'Merriweather', serif;
 }
 
 /* Reset + grundinställningar */
@@ -20,7 +21,7 @@ body {
   padding-top: 160px; /* Lyft ner allt under sticky header */
 }
 
-/* Rubriker & nav får rubriktypsnittet */
+/* Rubriker & nav */
 header.hero nav a,
 header.hero .hero-content h1,
 .section h2 {
@@ -43,12 +44,14 @@ header.hero {
   color: #333;
 }
 
-/* Logo (h1) dubbelt så stor */
+/* Logo (h1) dubbelt så stor och snirklig */
 .hero-content h1 {
+  font-family: var(--font-logo);
   font-size: 5rem;
   margin-bottom: 0.5rem;
 }
 .hero-content p {
+  font-family: var(--font-body);
   font-size: 1.2rem;
 }
 
@@ -65,11 +68,12 @@ header.hero {
 .section {
   padding: 3rem 1rem;
   max-width: 800px;
-  margin: auto; /* centrera sidled */
+  margin: auto; /* centrera horisontellt */
 }
 .section h2 {
-  margin-bottom: 1rem;
   font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;  /* Centrerar “Vad klienter säger” och alla andra sektionstitlar */
 }
 
 /* Testimonials-slider */
@@ -98,13 +102,11 @@ header.hero {
 .testimonial p {
   margin-bottom: 0.5rem;
   font-style: italic;
-  font-family: var(--font-body);
 }
 .testimonial span {
   font-size: 0.9rem;
   color: #555;
   display: block;
-  font-family: var(--font-body);
 }
 
 /* Pilar */
