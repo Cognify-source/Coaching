@@ -5,16 +5,17 @@
 
 /* 2. Typsnitts- & färgvariabler */
 :root {
-  --font-logo:      'Ballet', cursive;
-  --font-heading:   'Montserrat', sans-serif;
-  --font-body:      'Merriweather', serif;
+  --font-logo:        'Ballet', cursive;
+  --font-heading:     'Montserrat', sans-serif;
+  --font-body:        'Merriweather', serif;
 
-  --color-bg:       #FAF9F6;
-  --color-primary:  #B2AC88;
-  --color-secondary:#E6E6FA;
-  --color-accent:   #FFAEBC;
-  --color-text:     #333333;
-  --color-logo:     #FFFFFF;
+  --color-bg:         #FAF9F6;    /* varm off-white */
+  --color-primary:    #B2AC88;    /* sage-grön */
+  --color-secondary:  #E6E6FA;    /* lavendel */
+  --color-accent:     #FFAEBC;    /* mjuk rosa */
+  --color-text:       #333333;    /* mörkgrå */
+  --color-logo:       #FFFFFF;    /* vit logga */
+  --color-nav-hover:  #A3B18A;    /* ljusgrön hover för nav */
 }
 
 /* 3. Reset + grundinställningar */
@@ -36,10 +37,7 @@ header.hero {
   background: var(--color-primary);
   padding: 2rem 1rem;
   text-align: center;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 1000;
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
 }
 .nav {
   display: inline-block;
@@ -48,20 +46,13 @@ header.hero {
   text-decoration: none;
   color: var(--color-logo);
   font-family: var(--font-heading);
-  font-size: 1.5rem;       /* 50% större */
-  font-weight: normal;     /* inte fet */
-  text-transform: uppercase;
-}
-.nav a + a {
-  margin-left: 1rem;
-}
-.nav a + a::before {
-  content: "|";
-  color: var(--color-logo);
-  margin-right: 1rem;
+  font-size: 1.125rem;        /* 25% mindre än 1.5rem */
+  font-weight: normal;        /* inte fet */
+  text-transform: uppercase;  /* versaler */
+  margin: 0 1rem;
 }
 .nav a:hover {
-  color: var(--color-accent);
+  color: var(--color-nav-hover);
 }
 
 /* 5. Logo & underrubrik */
@@ -71,13 +62,13 @@ header.hero {
   margin: 1.5rem 0 0.5rem;
   color: var(--color-logo);
   text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-  text-transform: none;
+  text-transform: none;      /* behåll “Soul Flow” */
 }
 .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   color: var(--color-logo);
-  text-transform: uppercase;
+  text-transform: uppercase; /* versaler */
 }
 
 /* 6. Iframe för undersidor */
@@ -153,23 +144,22 @@ header.hero {
   display: block;
 }
 
-/* 10. Pilar */
+/* 10. Pilar — solida trianglar utan bakgrund */
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--color-secondary);
+  background: none;
   border: none;
+  color: var(--color-primary);
   font-size: 2rem;
   cursor: pointer;
-  padding: 0.2rem 0.6rem;
-  border-radius: 50%;
+  padding: 0;
   user-select: none;
-  z-index: 10;
 }
 .left-arrow  { left: -1.5rem; }
 .right-arrow { right: -1.5rem; }
-.arrow:hover { background: var(--color-accent); }
+.arrow:hover { color: var(--color-nav-hover); }
 
 /* 11. Formulär */
 form {
