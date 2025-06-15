@@ -82,8 +82,8 @@ header.hero .hero-content {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin-top: 2em;    /* extra luft ovanför loggan */
-  margin-bottom: 1em; /* luft under loggan */
+  margin-top: 3em;    /* extra luft ovanför loggan */
+  margin-bottom: 2em; /* luft under loggan */
   line-height: 1;
   text-transform: none;
 }
