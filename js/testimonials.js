@@ -2,8 +2,8 @@ const slides   = document.querySelectorAll('.testimonial');
 const prevBtn  = document.querySelector('.left-arrow');
 const nextBtn  = document.querySelector('.right-arrow');
 
-const displayTime    = 10000;
-const transitionTime = 600;
+const displayTime    = 10000;  // 10s visningstid
+const transitionTime = 600;    // 0.6s animation
 let currentIndex = 0;
 let autoTimer;
 
@@ -15,16 +15,18 @@ slides.forEach((slide, i) => {
   slide.style.transition = 'none';
 });
 
-// Visa slide n med riktad animation
+// Visa slide med riktad in/ut-animation
 function showSlide(nextIndex) {
   if (nextIndex === currentIndex) return;
   const outgoing = slides[currentIndex];
   const incoming = slides[nextIndex];
 
+  // Utgående åt vänster
   outgoing.style.transition = `transform ${transitionTime}ms ease, opacity ${transitionTime}ms ease`;
   outgoing.style.transform  = 'translateX(-100%) translateY(-50%)';
   outgoing.style.opacity    = '0';
 
+  // Förbered inkommande från höger
   incoming.style.transition = 'none';
   incoming.style.transform  = 'translateX(100%) translateY(-50%)';
   incoming.style.opacity    = '1';
@@ -48,35 +50,10 @@ function nextSlide() {
   showSlide((currentIndex + 1) % slides.length);
 }
 function prevSlide() {
-  const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-  // Riktad bakåt
-  const outgoing = slides[currentIndex];
-  const incoming = slides[prevIndex];
-
-  outgoing.style.transition = `transform ${transitionTime}ms ease, opacity ${transitionTime}ms ease`;
-  outgoing.style.transform  = 'translateX(100%) translateY(-50%)';
-  outgoing.style.opacity    = '0';
-
-  incoming.style.transition = 'none';
-  incoming.style.transform  = 'translateX(-100%) translateY(-50%)';
-  incoming.style.opacity    = '1';
-  incoming.style.display    = 'block';
-
-  void incoming.offsetWidth;
-
-  incoming.style.transition = `transform ${transitionTime}ms ease`;
-  incoming.style.transform  = 'translateX(0) translateY(-50%)';
-
-  setTimeout(() => {
-    outgoing.style.display    = 'none';
-    outgoing.style.transform  = 'translateX(0) translateY(-50%)';
-    outgoing.style.transition = 'none';
-  }, transitionTime);
-
-  currentIndex = prevIndex;
+  showSlide((currentIndex - 1 + slides.length) % slides.length);
 }
 
-// Auto-loop
+// Automatisk loop
 function startAuto() {
   autoTimer = setInterval(nextSlide, displayTime + transitionTime);
 }
@@ -88,5 +65,5 @@ function stopAuto() {
 prevBtn.addEventListener('click', () => { stopAuto(); prevSlide(); startAuto(); });
 nextBtn.addEventListener('click', () => { stopAuto(); nextSlide(); startAuto(); });
 
-// Starta
+// Starta slidern
 startAuto();

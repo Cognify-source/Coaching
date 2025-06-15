@@ -1,14 +1,30 @@
-/* Reset + grundtypsnitt */
+/* Importera Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Variabler för typsnitt */
+:root {
+  --font-heading: 'Playfair Display', serif;
+  --font-body:    'Open Sans', sans-serif;
+}
+
+/* Reset + grundinställningar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
   color: #333;
   padding-top: 160px; /* Lyft ner allt under sticky header */
+}
+
+/* Rubriker & nav får rubriktypsnittet */
+header.hero nav a,
+header.hero .hero-content h1,
+.section h2 {
+  font-family: var(--font-heading);
 }
 
 /* Sticky header */
@@ -17,8 +33,7 @@ header.hero {
   padding: 2rem 1rem;
   text-align: center;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   z-index: 1000;
 }
@@ -28,16 +43,16 @@ header.hero {
   color: #333;
 }
 
-/* Hero-content */
+/* Logo (h1) dubbelt så stor */
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 5rem;
   margin-bottom: 0.5rem;
 }
 .hero-content p {
   font-size: 1.2rem;
 }
 
-/* Iframe för innehåll */
+/* Iframe för undersidor */
 #content-frame {
   width: 80vw;
   max-width: 900px;
@@ -46,11 +61,11 @@ header.hero {
   border: none;
 }
 
-/* Sektioner inuti iframe */
+/* Sektioner inuti iframe och övrigt content */
 .section {
   padding: 3rem 1rem;
   max-width: 800px;
-  margin: auto;
+  margin: auto; /* centrera sidled */
 }
 .section h2 {
   margin-bottom: 1rem;
@@ -83,10 +98,13 @@ header.hero {
 .testimonial p {
   margin-bottom: 0.5rem;
   font-style: italic;
+  font-family: var(--font-body);
 }
 .testimonial span {
   font-size: 0.9rem;
   color: #555;
+  display: block;
+  font-family: var(--font-body);
 }
 
 /* Pilar */
@@ -107,10 +125,11 @@ header.hero {
 .right-arrow { right: -1.5rem; }
 .arrow:hover { background: rgba(255,255,255,1); }
 
-/* Kontaktformulär (för kontaktsidan i iframe) */
+/* Kontaktformulär inuti iframe */
 form {
   display: grid;
   gap: 0.8rem;
+  font-family: var(--font-body);
 }
 input, textarea {
   padding: 0.6rem;
@@ -122,6 +141,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-family: var(--font-heading);
 }
 button:hover {
   opacity: 0.9;
@@ -133,4 +153,5 @@ button:hover {
   padding: 1rem;
   background: #f5f5f5;
   font-size: 0.9rem;
+  font-family: var(--font-body);
 }
