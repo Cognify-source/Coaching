@@ -1,159 +1,112 @@
-/* 1. Ladda Google Fonts *efter* de första kommentarerna, allra högst upp */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
 
-/* 2. Variabler för typsnitt */
+/* Typsnittsvariabler */
 :root {
   --font-logo:    'Allura', cursive;
   --font-heading: 'Playfair Display', serif;
   --font-body:    'Merriweather', serif;
 }
 
-/* 3. Reset + grundinställningar */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Reset + body */
+* { margin:0; padding:0; box-sizing:border-box; }
 body {
   font-family: var(--font-body);
   line-height: 1.6;
   color: #333;
-  padding-top: 160px; /* Lyft ner allt under sticky header */
+  padding-top: 160px;
 }
 
-/* 4. Rubriker & nav */
+/* Header & nav */
 header.hero nav a,
-.section h2 {
-  font-family: var(--font-heading);
-}
-
-/* 5. Sticky header */
+.section h2 { font-family: var(--font-heading); }
 header.hero {
   background: #f5f5f5;
   padding: 2rem 1rem;
   text-align: center;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 1000;
+  position: fixed; top:0; left:0; width:100%; z-index:1000;
 }
-.nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #333;
-}
+.nav a { margin:0 1rem; text-decoration:none; color:#333; }
 
-/* 6. Logo (h1) snirkligt script-typsnitt, tvingat med !important */
+/* Logo */
 .hero-content h1 {
   font-family: var(--font-logo) !important;
-  font-size: 5rem;
-  margin-bottom: 0.5rem;
+  font-size: 5rem; margin-bottom:0.5rem;
 }
-.hero-content p {
-  font-family: var(--font-body);
-  font-size: 1.2rem;
-}
+.hero-content p { font-family: var(--font-body); font-size:1.2rem; }
 
-/* 7. Iframe för undersidor */
+/* Iframe */
 #content-frame {
-  width: 80vw;
-  max-width: 900px;
-  margin: 2rem auto;
-  display: block;
-  border: none;
+  width: 80vw; max-width:900px; margin:2rem auto; display:block; border:none;
 }
 
-/* 8. Gemensam styling för alla sektioner */
+/* Sektioner */
 .section {
-  padding: 3rem 1rem;
-  max-width: 800px;
-  margin: auto; /* centrera horisontellt */
+  padding:3rem 1rem;
+  max-width:800px;
+  margin:auto;
 }
 .section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  text-align: center;
+  font-size:1.8rem;
+  margin-bottom:1rem;
+  text-align:center;
 }
 
-/* 9. Testimonials-slider */
-.testimonial-slider {
-  position: relative;
-  width: 100%;        /* Fyller hela .section-bredden */
-  margin: 2rem auto;  /* Centrerar i .section */
+/* Om-mig layout */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
 }
-.slide-window {
-  position: relative;
-  overflow: hidden;
-  min-height: 120px;
-}
-.testimonial {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  padding: 1rem;
-  background: transparent;
+.about-img {
+  flex: 0 0 200px;
+  max-width: 200px;
   border-radius: 8px;
-  text-align: center;
-  opacity: 0;
 }
-.testimonial p {
-  margin-bottom: 0.5rem;
-  font-style: italic;
-}
-.testimonial span {
-  font-size: 0.9rem;
-  color: #555;
-  display: block;
+.about-text {
+  flex: 1;
 }
 
-/* 10. Pilar */
+/* Testimonials */
+.testimonial-slider {
+  position:relative;
+  width:100%;
+  margin:2rem auto;
+}
+.slide-window { position:relative; overflow:hidden; min-height:120px; }
+.testimonial {
+  position:absolute; top:50%; left:0; width:100%;
+  padding:1rem; background:transparent; border-radius:8px;
+  text-align:center; opacity:0;
+}
+.testimonial p { margin-bottom:0.5rem; font-style:italic; }
+.testimonial span { font-size:0.9rem; color:#555; display:block; }
+
+/* Pilar */
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.8);
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0.2rem 0.6rem;
-  border-radius: 50%;
-  user-select: none;
-  z-index: 10;
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:rgba(255,255,255,0.8); border:none; font-size:2rem;
+  cursor:pointer; padding:0.2rem 0.6rem; border-radius:50%; user-select:none;
+  z-index:10;
 }
-.left-arrow  { left: -1.5rem; }
-.right-arrow { right: -1.5rem; }
-.arrow:hover { background: rgba(255,255,255,1); }
+.left-arrow  { left:-1.5rem; }
+.right-arrow { right:-1.5rem; }
+.arrow:hover { background:rgba(255,255,255,1); }
 
-/* 11. Kontaktformulär inuti iframe */
-form {
-  display: grid;
-  gap: 0.8rem;
-  font-family: var(--font-body);
-}
-input, textarea {
-  padding: 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+/* Formulär */
+form { display:grid; gap:0.8rem; font-family: var(--font-body); }
+input, textarea { padding:0.6rem; border:1px solid #ccc; border-radius:4px; }
 button {
-  padding: 0.8rem 1.2rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: var(--font-heading);
+  padding:0.8rem 1.2rem; border:none; border-radius:4px;
+  cursor:pointer; font-family: var(--font-heading);
 }
-button:hover {
-  opacity: 0.9;
-}
+button:hover { opacity:0.9; }
 
-/* 12. Footer */
+/* Footer */
 .footer {
-  text-align: center;
-  padding: 1rem;
-  background: #f5f5f5;
-  font-size: 0.9rem;
-  font-family: var(--font-body);
+  text-align:center; padding:1rem;
+  background:#f5f5f5; font-size:0.9rem; font-family: var(--font-body);
 }
