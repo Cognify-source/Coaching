@@ -86,8 +86,8 @@ header.hero .hero-content p {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin-top: 3.0em;     /* tredubblat (0.3em → 0.9em) */
-  margin-bottom: 3.0em;  /* tredubblat (0.5em → 1.5em) */
+  margin-top: 7.0em;     /* tredubblat (0.3em → 0.9em) */
+  margin-bottom: 7.0em;  /* tredubblat (0.5em → 1.5em) */
   text-transform: none;
 }
 .hero-content p {
