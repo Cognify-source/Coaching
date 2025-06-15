@@ -33,13 +33,14 @@ body {
 }
 
 /* 4. Header & nav */
+/* Minska vertikal padding med ca 60% */
 header.hero {
   background-image:
     linear-gradient(rgba(138,132,96,0.8), rgba(215,215,215,0.8)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
-  padding: 1rem 1rem;    /* Minska vertikal luft */
+  padding: 0.4rem 1rem;    /* tidigare 1rem 1rem */
   text-align: center;
   position: fixed;
   top: 0; left: 0;
@@ -69,6 +70,7 @@ header.hero {
 }
 
 /* 5. Logotyp & underrubrik */
+/* Logotypstorlek avrundad till närmaste heltal */
 header.hero .hero-content h1,
 header.hero .hero-content p {
   color: var(--color-logo);
@@ -77,8 +79,8 @@ header.hero .hero-content p {
 .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-weight: normal;
-  font-size: 13.388rem;   /* 14.875rem * 0.9 */
-  margin: 1rem 0 0.5rem;  /* något mindre överkant */
+  font-size: 13rem;        /* avrundat från 13.388rem */
+  margin: 0.4rem 0 0.2rem; /* proportionellt margin efter padding */
   text-transform: none;
 }
 .hero-content p {
@@ -186,7 +188,9 @@ header.hero .hero-content p {
 
 /* 12. Formulär & kontakt-info */
 form {
-  display: grid; gap: 0.6rem;
+  display: grid;
+  gap: 0.6rem;
+  font-family: var(--font-body);
 }
 label { font-size: 0.9rem; }
 input, textarea {
