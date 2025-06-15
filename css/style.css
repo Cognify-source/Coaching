@@ -44,6 +44,8 @@ header.hero {
   position: fixed; top: 0; left: 0;
   width: 100%; z-index: 1000;
 }
+
+/* 5. Navigation */
 .nav {
   display: inline-block;
   position: relative;
@@ -68,11 +70,15 @@ header.hero {
   color: var(--color-nav-hover);
 }
 
-/* 5. Logotyp & underrubrik */
-/* Tredubblad luft runt loggan */
+/* 6. Logotyp & underrubrik */
+/* Använd flex + gap för stabil vertikal avstånd */
 header.hero .hero-content {
   position: relative;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em; /* 50% mer än tidigare 1em, justera efter behov */
 }
 header.hero .hero-content h1,
 header.hero .hero-content p {
@@ -86,19 +92,15 @@ header.hero .hero-content p {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin-top: 7.0em;     /* tredubblat (0.3em → 0.9em) */
-  margin-bottom: 7.0em;  /* tredubblat (0.5em → 1.5em) */
   text-transform: none;
 }
 .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   text-transform: uppercase;
-  margin-top: 1.5em;     /* tredubblat (0.5em → 1.5em) */
-  margin-bottom: 1.5em;  /* tredubblat (0.3em → 0.9em but här satt vi till 1.5em för enhetlighet) */
 }
 
-/* 6. Iframe för undersidor */
+/* 7. Iframe för undersidor */
 #content-frame {
   margin: 2rem auto;
   display: block;
@@ -106,7 +108,7 @@ header.hero .hero-content p {
   border: none;
 }
 
-/* 7. Sektioner */
+/* 8. Sektioner */
 .section {
   margin: 0 auto;
   max-width: 800px;
@@ -120,7 +122,7 @@ header.hero .hero-content p {
   margin-bottom: 1rem;
 }
 
-/* 8. Om-mig */
+/* 9. Om-mig */
 #om-mig {
   text-align: center;
 }
@@ -132,23 +134,21 @@ header.hero .hero-content p {
   border-radius: 8px;
 }
 
-/* 9. Testimonials-sektionen */
+/* 10. Testimonials-sektionen */
 #testimonials {
   background: var(--color-primary);
   color: var(--color-logo);
   padding: 1.5rem 1rem;
   width: 100%; max-width: none;
-  margin: 0;
 }
 #testimonials h2 {
   color: var(--color-logo);
 }
 
-/* 10. Testimonials-slider */
+/* 11. Testimonials-slider */
 .testimonial-slider {
   position: relative;
-  width: 56vw;
-  max-width: 900px;
+  width: 56vw; max-width: 900px;
   margin: 1rem auto;
 }
 .slide-window {
@@ -175,7 +175,7 @@ header.hero .hero-content p {
   font-size: 0.9rem;
 }
 
-/* 11. Pilar */
+/* 12. Pilar */
 .arrow {
   position: absolute;
   top: 50%;
@@ -195,18 +195,16 @@ header.hero .hero-content p {
   color: var(--color-nav-hover);
 }
 
-/* 12. Formulär & kontakt-info */
+/* 13. Formulär & kontakt-info */
 form {
   display: grid; gap: 0.6rem;
 }
-label {
-  font-size: 0.9rem;
-}
+label { font-size: 0.9rem; }
 input, textarea {
   padding: 0.4rem 0.6rem;
   font-size: 0.9rem;
-  border: 1px solid #ccc;
   border-radius: 4px;
+  border: 1px solid #ccc;
 }
 button {
   padding: 0.6rem 1rem;
@@ -227,7 +225,7 @@ button:hover {
   font-size: 0.9rem;
 }
 
-/* 13. Footer */
+/* 14. Footer */
 .footer {
   text-align: center;
   padding: 0.5rem 1rem;
