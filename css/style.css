@@ -73,15 +73,25 @@ header.hero {
 .section h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  text-align: center;  /* Centrerar “Vad klienter säger” och alla andra sektionstitlar */
+  text-align: center;
+}
+
+/* Testimonials-sektionen (centrerad container) */
+#testimonials {
+  width: 80vw;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 3rem 1rem;
+}
+#testimonials h2 {
+  text-align: center;
 }
 
 /* Testimonials-slider */
 .testimonial-slider {
   position: relative;
-  width: 80vw;
-  max-width: 900px;
-  margin: 2rem auto;
+  width: 100%; /* fyller hela #testimonials-bredden */
+  margin: 0 auto;
 }
 .slide-window {
   position: relative;
