@@ -144,7 +144,7 @@ header.hero .hero-content p {
 }
 .testimonial {
   position: absolute;
-  top: 45%;      /* justerat ytterligare för bättre vertikal centrering */
+  top: 40%;      /* flyttat upp ytterligare ungefär två textrader */
   left: 0;
   width: 100%;
   padding: 1rem;
