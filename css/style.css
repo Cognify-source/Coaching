@@ -8,7 +8,6 @@
   --font-logo:       'Cinzel Decorative', cursive;
   --font-heading:    'Montserrat', sans-serif;
   --font-body:       'Merriweather', serif;
-
   --color-bg:        #FAF9F6;
   --color-primary:   #B2AC88;
   --color-secondary: #E6E6FA;
@@ -71,14 +70,14 @@ header.hero {
 }
 
 /* 6. Logotyp & underrubrik */
-/* Använd flex + gap för luft ovanför loggan, gap nu dubbelt (3em) */
+/* Flex + gap ovan loggan, margin under och ovan underrubrik */
 header.hero .hero-content {
   position: relative;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3em; /* dubbelt mot tidigare 1.5em */
+  gap: 2em; /* mindre än tidigare 3em */
 }
 header.hero .hero-content h1,
 header.hero .hero-content p {
@@ -92,14 +91,14 @@ header.hero .hero-content p {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin-bottom: 1.5em; /* luft under loggan */
+  margin-bottom: 1em; /* minskat från 1.5em */
   text-transform: none;
 }
 .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   text-transform: uppercase;
-  margin-top: 1.5em; /* extra luft ovan underrubrik */
+  margin-top: 1em; /* minskat från 1.5em */
 }
 
 /* 7. Iframe för undersidor */
