@@ -20,54 +20,86 @@ function initTestimonialsSlider() {
   let current = 0;
   let interval;
 
-  // Positionera slides: första synlig, övriga till höger
+  // Grund-setup: första slide synlig, övriga placerade utanför till höger
   slides.forEach((slide, i) => {
     Object.assign(slide.style, {
-      position:    'absolute',
-      top:         '0',
-      left:        '0',
-      width:       '100%',
-      transition:  'transform 0.5s ease, opacity 0.5s ease',
-      transform:   i === 0 ? 'translateX(0)' : 'translateX(100%)',
-      opacity:     i === 0 ? '1' : '0'
+      position:   'absolute',
+      top:        '0',
+      left:       '0',
+      width:      '100%',
+      transition: 'transform 0.5s ease, opacity 0.5s ease',
+      transform:  i === 0 ? 'translateX(0)' : 'translateX(100%)',
+      opacity:    i === 0 ? '1' : '0'
     });
   });
 
-  function showSlide(newIndex, direction) {
-    if (newIndex === current) return;
+  function showForward(nextIndex) {
+    if (nextIndex === current) return;
     const outgoing = slides[current];
-    const incoming = slides[newIndex];
+    const incoming = slides[nextIndex];
 
-    // Placera incoming utanför vyn
-    incoming.style.transform = direction === 'forward'
-      ? 'translateX(100%)'
-      : 'translateX(-100%)';
-    incoming.style.opacity   = '1';
+    // 1) Placera incoming direkt utanför vyn till höger (utan transition)
+    incoming.style.transition = 'none';
+    incoming.style.transform  = 'translateX(100%)';
+    incoming.style.opacity    = '1';
 
-    // Tvinga reflow för att animationen skall starta korrekt
-    void incoming.offsetWidth;
+    // 2) Tvinga reflow
+    incoming.offsetHeight;
 
-    // Animera in/out
-    incoming.style.transform = 'translateX(0)';
-    outgoing.style.transform = direction === 'forward'
-      ? 'translateX(-100%)'
-      : 'translateX(100%)';
-    outgoing.style.opacity   = '0';
+    // 3) Återställ transition och animera in/ut
+    incoming.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+    incoming.style.transform  = 'translateX(0)';
+    outgoing.style.transform  = 'translateX(-100%)';
+    outgoing.style.opacity    = '0';
 
-    current = newIndex;
+    // 4) Efter animationen, reset outgoing till 100% igen så den är redo nästa gång
+    setTimeout(() => {
+      outgoing.style.transition = 'none';
+      outgoing.style.transform  = 'translateX(100%)';
+      outgoing.style.opacity    = '0';
+      // reflow och återställ transition
+      outgoing.offsetHeight;
+      outgoing.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+    }, 500);
+
+    current = nextIndex;
+  }
+
+  function showBackward(prevIndex) {
+    if (prevIndex === current) return;
+    const outgoing = slides[current];
+    const incoming = slides[prevIndex];
+
+    incoming.style.transition = 'none';
+    incoming.style.transform  = 'translateX(-100%)';
+    incoming.style.opacity    = '1';
+    incoming.offsetHeight;
+    incoming.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+    incoming.style.transform  = 'translateX(0)';
+    outgoing.style.transform  = 'translateX(100%)';
+    outgoing.style.opacity    = '0';
+
+    setTimeout(() => {
+      outgoing.style.transition = 'none';
+      outgoing.style.transform  = 'translateX(-100%)';
+      outgoing.style.opacity    = '0';
+      outgoing.offsetHeight;
+      outgoing.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+    }, 500);
+
+    current = prevIndex;
   }
 
   function next() {
     const nextIndex = (current + 1) % slides.length;
-    showSlide(nextIndex, 'forward');
+    showForward(nextIndex);
   }
 
   function prev() {
     const prevIndex = (current - 1 + slides.length) % slides.length;
-    showSlide(prevIndex, 'backward');
+    showBackward(prevIndex);
   }
 
-  // Hantera knapptryck
   leftBtn.addEventListener('click', () => {
     clearInterval(interval);
     prev();
