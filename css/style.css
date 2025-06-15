@@ -33,18 +33,21 @@ body {
 }
 
 /* 4. Header & nav */
-/* Vertikal padding 1.7rem, horisontell 2rem */
+/* Öka vertikal padding med 50%: från 1.7rem → 2.6rem */
 header.hero {
   background-image:
     linear-gradient(rgba(138,132,96,0.8), rgba(215,215,215,0.8)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
-  padding: 1.7rem 2rem;
+  padding: 2.6rem 2rem;  /* top/bottom 2.6rem, left/right 2rem */
   text-align: center;
   position: fixed; top: 0; left: 0;
   width: 100%; z-index: 1000;
 }
+
+/* 5. Navigation */
+/* Gör klickytorna breda och liggande ovanpå loggan */
 .nav {
   display: inline-block;
   position: relative;
@@ -69,8 +72,8 @@ header.hero {
   color: var(--color-nav-hover);
 }
 
-/* 5. Logotyp & underrubrik */
-/* Loggan ligger under nav */
+/* 6. Logotyp & underrubrik */
+/* Ge 50% mer luft mellan loggan och underrubriken, och 50% extra ovan/under båda */
 header.hero .hero-content {
   position: relative;
   z-index: 1000;
@@ -83,22 +86,25 @@ header.hero .hero-content p {
   margin: 0;
   padding: 0;
 }
+/* Rubrik (logotyp) */
 .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-weight: normal;
-  font-size: 7rem;     /* 50% av tidigare, avrundat till heltal */
-  margin-top: 0.2em;
-  margin-bottom: 0.1em;
+  font-size: 7rem;
+  margin-top: 0.3em;    /* 50% mer enn tidigare 0.2em */
+  margin-bottom: 0.15em;/* 50% mer enn tidigare 0.1em */
   text-transform: none;
 }
+/* Underrubrik */
 .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   text-transform: uppercase;
-  margin-top: 0;
+  margin-top: 0.3em;    /* ge luft ovanför */
+  margin-bottom: 0.3em; /* ge luft under */
 }
 
-/* 6. Iframe för undersidor */
+/* 7. Iframe för undersidor */
 #content-frame {
   margin: 2rem auto;
   display: block;
@@ -106,7 +112,7 @@ header.hero .hero-content p {
   border: none;
 }
 
-/* 7. Sektioner */
+/* 8. Sektioner */
 .section {
   margin: 0 auto;
   max-width: 800px;
@@ -120,7 +126,7 @@ header.hero .hero-content p {
   margin-bottom: 1rem;
 }
 
-/* 8. Om-mig */
+/* 9. Om-mig */
 #om-mig {
   text-align: center;
 }
@@ -132,7 +138,7 @@ header.hero .hero-content p {
   border-radius: 8px;
 }
 
-/* 9. Testimonials-sektionen */
+/* 10. Testimonials-sektionen */
 #testimonials {
   background: var(--color-primary);
   color: var(--color-logo);
@@ -144,7 +150,7 @@ header.hero .hero-content p {
   color: var(--color-logo);
 }
 
-/* 10. Testimonials-slider */
+/* 11. Testimonials-slider */
 .testimonial-slider {
   position: relative;
   width: 56vw;
@@ -175,7 +181,7 @@ header.hero .hero-content p {
   font-size: 0.9rem;
 }
 
-/* 11. Pilar */
+/* 12. Pilar */
 .arrow {
   position: absolute;
   top: 50%;
@@ -195,13 +201,11 @@ header.hero .hero-content p {
   color: var(--color-nav-hover);
 }
 
-/* 12. Formulär & kontakt-info */
+/* 13. Formulär & kontakt-info */
 form {
   display: grid; gap: 0.6rem;
 }
-label {
-  font-size: 0.9rem;
-}
+label { font-size: 0.9rem; }
 input, textarea {
   padding: 0.4rem 0.6rem;
   font-size: 0.9rem;
@@ -213,10 +217,8 @@ button {
   font-family: var(--font-heading);
   background: var(--color-secondary);
   color: var(--color-logo);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
+  border: none; border-radius: 4px;
+  cursor: pointer; font-size: 1rem;
 }
 button:hover {
   opacity: 0.9;
@@ -227,7 +229,7 @@ button:hover {
   font-size: 0.9rem;
 }
 
-/* 13. Footer */
+/* 14. Footer */
 .footer {
   text-align: center;
   padding: 0.5rem 1rem;
