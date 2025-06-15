@@ -33,13 +33,14 @@ body {
 }
 
 /* 4. Header & nav */
+/* Vertikal padding 1.7rem, horisontell 2rem */
 header.hero {
   background-image:
     linear-gradient(rgba(138,132,96,0.8), rgba(215,215,215,0.8)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
-  padding: 1.7rem 2rem;  
+  padding: 1.7rem 2rem;
   text-align: center;
   position: fixed; top: 0; left: 0;
   width: 100%; z-index: 1000;
@@ -69,6 +70,7 @@ header.hero {
 }
 
 /* 5. Logotyp & underrubrik */
+/* Loggan ligger under nav */
 header.hero .hero-content {
   position: relative;
   z-index: 1000;
@@ -84,7 +86,7 @@ header.hero .hero-content p {
 .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-weight: normal;
-  font-size: 13rem;
+  font-size: 7rem;     /* 50% av tidigare, avrundat till heltal */
   margin-top: 0.2em;
   margin-bottom: 0.1em;
   text-transform: none;
@@ -197,7 +199,9 @@ header.hero .hero-content p {
 form {
   display: grid; gap: 0.6rem;
 }
-label { font-size: 0.9rem; }
+label {
+  font-size: 0.9rem;
+}
 input, textarea {
   padding: 0.4rem 0.6rem;
   font-size: 0.9rem;
@@ -209,8 +213,10 @@ button {
   font-family: var(--font-heading);
   background: var(--color-secondary);
   color: var(--color-logo);
-  border: none; border-radius: 4px;
-  cursor: pointer; font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 button:hover {
   opacity: 0.9;
