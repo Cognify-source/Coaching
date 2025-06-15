@@ -96,7 +96,7 @@ header.hero .hero-content p {
   border: none;
 }
 
-/* 8. Sektioner */
+/* 8. Gemensam sektion */
 .section {
   padding: 3rem 1rem;
   max-width: 800px;
@@ -112,17 +112,33 @@ header.hero .hero-content p {
   font-weight: normal;
 }
 
-/* 9. Testimonials-sektionen får samma bakgrund som headern */
-#testimonials {
-  background-color: var(--color-primary);
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+/* 9. Om-mig: text centrerad och porträtt mindre */
+#om-mig {
+  text-align: center;
+}
+#om-mig img {
+  display: block;
+  margin: 2rem auto 0;
+  max-width: 200px;  /* begränsar porträttets bredd */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-/* 10. Testimonials-slider */
+/* 10. Testimonials-sektionen: fullbredd & samma färg som headern */
+#testimonials {
+  background-color: var(--color-primary);
+  padding: 3rem 1rem;
+  width: 100%;
+  max-width: none;  /* override .section max-width */
+  margin: 0;        /* override .section centering */
+}
+
+/* 11. Testimonials-slider */
 .testimonial-slider {
   position: relative;
-  width: 100%;
+  width: 80vw;
+  max-width: 900px;
   margin: 0 auto;
 }
 .slide-window {
@@ -131,37 +147,30 @@ header.hero .hero-content p {
   min-height: 120px;
 }
 .testimonial {
-  position: absolute;
-  top: 50%; left: 0;
+  position: absolute; top: 50%; left: 0;
   width: 100%; padding: 1rem;
-  background: transparent;
-  border-radius: 8px;
-  text-align: center;
-  opacity: 0;
+  background: transparent; border-radius: 8px;
+  text-align: center; opacity: 0;
 }
 .testimonial p {
-  margin-bottom: 0.5rem;
-  font-style: italic;
+  margin-bottom: 0.5rem; font-style: italic;
 }
 .testimonial span {
-  font-size: 0.9rem;
-  color: var(--color-logo);
-  display: block;
+  font-size: 0.9rem; color: var(--color-logo); display: block;
 }
 
-/* 11. Pilar – solida trianglar utan bakgrund */
+/* 12. Pilar – solida trianglar utan bakgrund */
 .arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
   background: none; border: none;
-  color: var(--color-logo);
-  font-size: 2rem; cursor: pointer;
-  padding: 0; user-select: none; z-index: 10;
+  color: var(--color-logo); font-size: 2rem;
+  cursor: pointer; padding: 0; user-select: none; z-index: 10;
 }
 .left-arrow  { left: -1.5rem; }
 .right-arrow { right: -1.5rem; }
 .arrow:hover { color: var(--color-accent); }
 
-/* 12. Formulär */
+/* 13. Formulär */
 form {
   display: grid; gap: 0.6rem;
   font-family: var(--font-body); font-size: 0.9rem;
@@ -180,7 +189,7 @@ button {
 }
 button:hover { opacity: 0.9; }
 
-/* 13. Kontakt-info */
+/* 14. Kontakt-info */
 .contact-info {
   margin-top: 2rem;
   text-align: center;
@@ -188,7 +197,7 @@ button:hover { opacity: 0.9; }
   font-size: 0.9rem;
 }
 
-/* 14. Footer */
+/* 15. Footer */
 .footer {
   text-align: center; padding: 1rem;
   background: var(--color-primary); font-size: 0.9rem;
