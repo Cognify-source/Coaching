@@ -20,42 +20,39 @@ function initTestimonialsSlider() {
   let current = 0;
   let interval;
 
-  // Förbered slides: första synlig, resten utanför till höger
+  // Positionera slides: första synlig, övriga till höger
   slides.forEach((slide, i) => {
-    slide.style.position = 'absolute';
-    slide.style.top      = '0';
-    slide.style.left     = '0';
-    slide.style.width    = '100%';
-    slide.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-    if (i === 0) {
-      slide.style.transform = 'translateX(0)';
-      slide.style.opacity   = '1';
-    } else {
-      slide.style.transform = 'translateX(100%)';
-      slide.style.opacity   = '0';
-    }
+    Object.assign(slide.style, {
+      position:    'absolute',
+      top:         '0',
+      left:        '0',
+      width:       '100%',
+      transition:  'transform 0.5s ease, opacity 0.5s ease',
+      transform:   i === 0 ? 'translateX(0)' : 'translateX(100%)',
+      opacity:     i === 0 ? '1' : '0'
+    });
   });
 
-  function showSlide(newIndex, direction = 'forward') {
+  function showSlide(newIndex, direction) {
     if (newIndex === current) return;
     const outgoing = slides[current];
     const incoming = slides[newIndex];
 
-    // Placera incoming utanför vyn åt rätt håll
+    // Placera incoming utanför vyn
     incoming.style.transform = direction === 'forward'
       ? 'translateX(100%)'
       : 'translateX(-100%)';
-    incoming.style.opacity = '1';
+    incoming.style.opacity   = '1';
 
-    // Tvinga fram stil-uppdatering innan animation
-    incoming.getBoundingClientRect();
+    // Tvinga reflow för att animationen skall starta korrekt
+    void incoming.offsetWidth;
 
-    // Animera in och ut
+    // Animera in/out
     incoming.style.transform = 'translateX(0)';
     outgoing.style.transform = direction === 'forward'
       ? 'translateX(-100%)'
       : 'translateX(100%)';
-    outgoing.style.opacity = '0';
+    outgoing.style.opacity   = '0';
 
     current = newIndex;
   }
@@ -70,18 +67,18 @@ function initTestimonialsSlider() {
     showSlide(prevIndex, 'backward');
   }
 
+  // Hantera knapptryck
   leftBtn.addEventListener('click', () => {
     clearInterval(interval);
     prev();
     interval = setInterval(next, 10000);
   });
-
   rightBtn.addEventListener('click', () => {
     clearInterval(interval);
     next();
     interval = setInterval(next, 10000);
   });
 
-  // Starta auto­scroll
+  // Starta auto-scroll framåt
   interval = setInterval(next, 10000);
 }
