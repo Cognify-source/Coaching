@@ -1,60 +1,85 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+/* 1. Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
 
-/* Typsnittsvariabler */
+/* 2. Typsnitts- & färgvariabler */
 :root {
-  --font-logo:    'Allura', cursive;
-  --font-heading: 'Playfair Display', serif;
-  --font-body:    'Merriweather', serif;
+  --font-logo:      'Ballet', cursive;
+  --font-heading:   'Playfair Display', serif;
+  --font-body:      'Merriweather', serif;
+
+  --color-bg:       #FAF9F6;  /* varm off-white */
+  --color-primary:  #B2AC88;  /* sage-grön */
+  --color-secondary:#E6E6FA;  /* lavendel */
+  --color-accent:   #FFAEBC;  /* mjuk rosa */
+  --color-text:     #333333;  /* mörkgrå */
 }
 
-/* Reset + body */
+/* 3. Reset + grundinställningar */
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
+  background: var(--color-bg);
   font-family: var(--font-body);
   line-height: 1.6;
-  color: #333;
+  color: var(--color-text);
   padding-top: 160px;
 }
 
-/* Header & nav */
-header.hero nav a,
-.section h2 { font-family: var(--font-heading); }
+/* 4. Header & nav */
 header.hero {
-  background: #f5f5f5;
+  background: var(--color-primary);
   padding: 2rem 1rem;
   text-align: center;
   position: fixed; top:0; left:0; width:100%; z-index:1000;
 }
-.nav a { margin:0 1rem; text-decoration:none; color:#333; }
+.nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+}
+.header a:hover {
+  color: var(--color-accent);
+}
 
-/* Logo */
+/* 5. Logo & underrubrik */
 .hero-content h1 {
   font-family: var(--font-logo) !important;
-  font-size: 5rem; margin-bottom:0.5rem;
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
 }
-.hero-content p { font-family: var(--font-body); font-size:1.2rem; }
+.hero-content p {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
 
-/* Iframe */
+/* 6. Iframe för undersidor */
 #content-frame {
-  width: 80vw; max-width:900px; margin:2rem auto; display:block; border:none;
+  width: 80vw;
+  max-width: 900px;
+  margin: 2rem auto;
+  display: block;
+  border: none;
 }
 
-/* Sektioner */
+/* 7. Gemensam sektion */
 .section {
-  padding:3rem 1rem;
-  max-width:800px;
-  margin:auto;
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: auto;
 }
 .section h2 {
-  font-size:1.8rem;
-  margin-bottom:1rem;
-  text-align:center;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--color-text);
 }
 
-/* Om-mig layout */
+/* 8. Om-mig layout */
 .about-container {
   display: flex;
   flex-wrap: wrap;
@@ -66,47 +91,90 @@ header.hero {
   max-width: 200px;
   border-radius: 8px;
 }
-.about-text {
-  flex: 1;
+.about-text p {
+  margin-bottom: 1rem;
 }
 
-/* Testimonials */
+/* 9. Testimonials-slider */
 .testimonial-slider {
-  position:relative;
-  width:100%;
-  margin:2rem auto;
+  position: relative;
+  width: 100%;
+  margin: 2rem auto;
 }
-.slide-window { position:relative; overflow:hidden; min-height:120px; }
+.slide-window {
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+}
 .testimonial {
-  position:absolute; top:50%; left:0; width:100%;
-  padding:1rem; background:transparent; border-radius:8px;
-  text-align:center; opacity:0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0;
 }
-.testimonial p { margin-bottom:0.5rem; font-style:italic; }
-.testimonial span { font-size:0.9rem; color:#555; display:block; }
+.testimonial p {
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+.testimonial span {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  display: block;
+}
 
-/* Pilar */
+/* 10. Pilar */
 .arrow {
-  position:absolute; top:50%; transform:translateY(-50%);
-  background:rgba(255,255,255,0.8); border:none; font-size:2rem;
-  cursor:pointer; padding:0.2rem 0.6rem; border-radius:50%; user-select:none;
-  z-index:10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-secondary);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+  user-select: none;
+  z-index: 10;
 }
-.left-arrow  { left:-1.5rem; }
-.right-arrow { right:-1.5rem; }
-.arrow:hover { background:rgba(255,255,255,1); }
+.left-arrow  { left: -1.5rem; }
+.right-arrow { right: -1.5rem; }
+.arrow:hover { background: var(--color-accent); }
 
-/* Formulär */
-form { display:grid; gap:0.8rem; font-family: var(--font-body); }
-input, textarea { padding:0.6rem; border:1px solid #ccc; border-radius:4px; }
+/* 11. Formulär */
+form {
+  display: grid;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+}
+input, textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 button {
-  padding:0.8rem 1.2rem; border:none; border-radius:4px;
-  cursor:pointer; font-family: var(--font-heading);
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  background: var(--color-primary);
+  color: var(--color-text);
 }
-button:hover { opacity:0.9; }
+button:hover {
+  opacity: 0.9;
+}
 
-/* Footer */
+/* 12. Footer */
 .footer {
-  text-align:center; padding:1rem;
-  background:#f5f5f5; font-size:0.9rem; font-family: var(--font-body);
+  text-align: center;
+  padding: 1rem;
+  background: var(--color-primary);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
 }
