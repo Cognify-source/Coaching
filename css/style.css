@@ -44,7 +44,7 @@ header.hero {
   color: #333;
 }
 
-/* Logo (h1) dubbelt så stor och snirklig */
+/* Logo (h1) snirklig och dubbelt så stor */
 .hero-content h1 {
   font-family: var(--font-logo);
   font-size: 5rem;
@@ -64,7 +64,7 @@ header.hero {
   border: none;
 }
 
-/* Sektioner inuti iframe och övrigt content */
+/* Gemensam styling för alla sektioner */
 .section {
   padding: 3rem 1rem;
   max-width: 800px;
@@ -76,22 +76,11 @@ header.hero {
   text-align: center;
 }
 
-/* Testimonials-sektionen (centrerad container) */
-#testimonials {
-  width: 80vw;
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 3rem 1rem;
-}
-#testimonials h2 {
-  text-align: center;
-}
-
 /* Testimonials-slider */
 .testimonial-slider {
   position: relative;
-  width: 100%; /* fyller hela #testimonials-bredden */
-  margin: 0 auto;
+  width: 100%;        /* Fyller hela .section-bredden */
+  margin: 2rem auto;  /* Centrerar i .section */
 }
 .slide-window {
   position: relative;
