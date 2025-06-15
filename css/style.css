@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* 2. Typsnitts‐ & färgvariabler */
+/* 2. Typsnitts- & färgvariabler */
 :root {
   --font-logo:        'Ballet', cursive;
   --font-heading:     'Montserrat', sans-serif;
@@ -15,7 +15,7 @@
   --color-accent:     #FFAEBC;
   --color-text:       #333333;
   --color-logo:       #FFFFFF;
-  --color-nav-hover:  #B2C69C; /* lite ljusare än tidigare */
+  --color-nav-hover:  #B2C69C;
 }
 
 /* 3. Reset + grundinställningar */
@@ -37,7 +37,8 @@ header.hero {
   background: var(--color-primary);
   padding: 2rem 1rem;
   text-align: center;
-  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  position: fixed;
+  top: 0; left: 0; width: 100%; z-index: 1000;
 }
 .nav {
   display: inline-block;
@@ -49,15 +50,13 @@ header.hero {
   font-size: 1.125rem;
   font-weight: normal;
   text-transform: uppercase;
-  margin: 0 1.5rem;        /* ökat mellanrum */
   position: relative;
 }
-.nav a + a::before {
+.nav a:not(:last-child)::after {
   content: "|";
+  display: inline-block;
+  margin: 0 1.5rem;
   color: var(--color-logo);
-  position: absolute;
-  left: -0.75rem;         /* placerar strecket mitt i mellanrummet */
-  top: 0;
 }
 .nav a:hover {
   color: var(--color-nav-hover);
@@ -104,36 +103,62 @@ header.hero {
   font-weight: normal;
 }
 
-/* 8. Om‐mig layout */
+/* 8. Om-mig layout */
 .about-container {
-  display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
 }
 .about-img {
-  flex: 0 0 200px; max-width: 200px; border-radius: 8px;
+  flex: 0 0 200px;
+  max-width: 200px;
+  border-radius: 8px;
 }
-.about-text p { margin-bottom: 1rem; }
+.about-text p {
+  margin-bottom: 1rem;
+}
 
-/* 9. Testimonials‐slider */
+/* 9. Testimonials-slider */
 .testimonial-slider {
-  position: relative; width: 100%; margin: 2rem auto;
+  position: relative;
+  width: 100%;
+  margin: 2rem auto;
 }
 .slide-window {
-  position: relative; overflow: hidden; min-height: 120px;
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
 }
 .testimonial {
-  position: absolute; top: 50%; left: 0;
-  width: 100%; padding: 1rem; background: transparent;
-  border-radius: 8px; text-align: center; opacity: 0;
+  position: absolute;
+  top: 50%; left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0;
 }
-.testimonial p { margin-bottom: 0.5rem; font-style: italic; }
-.testimonial span { font-size: 0.9rem; color: var(--color-text); display: block; }
+.testimonial p {
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+.testimonial span {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  display: block;
+}
 
 /* 10. Pilar – solida trianglar utan bakgrund */
 .arrow {
-  position: absolute; top: 50%; transform: translateY(-50%);
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
   background: none; border: none;
-  color: var(--color-primary); font-size: 2rem;
-  cursor: pointer; padding: 0; user-select: none; z-index: 10;
+  color: var(--color-primary);
+  font-size: 2rem;
+  cursor: pointer; padding: 0; user-select: none;
+  z-index: 10;
 }
 .left-arrow  { left: -1.5rem; }
 .right-arrow { right: -1.5rem; }
@@ -141,25 +166,40 @@ header.hero {
 
 /* 11. Formulär */
 form {
-  display: grid; gap: 0.6rem;
-  font-family: var(--font-body); font-size: 0.9rem;
+  display: grid;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
 }
-label { font-size: 0.9rem; }
+label {
+  font-size: 0.9rem;
+}
 input, textarea {
-  padding: 0.4rem 0.6rem; font-size: 0.9rem;
-  border: 1px solid #ccc; border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 button {
-  padding: 0.6rem 1rem; font-size: 1rem;
-  border: none; border-radius: 4px; cursor: pointer;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   font-family: var(--font-heading);
-  background: var(--color-primary); color: var(--color-logo);
+  background: var(--color-primary);
+  color: var(--color-logo);
 }
-button:hover { opacity: 0.9; }
+button:hover {
+  opacity: 0.9;
+}
 
 /* 12. Footer */
 .footer {
-  text-align: center; padding: 1rem;
-  background: var(--color-primary); font-size: 0.9rem;
-  font-family: var(--font-body); color: var(--color-logo);
+  text-align: center;
+  padding: 1rem;
+  background: var(--color-primary);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  color: var(--color-logo);
 }
