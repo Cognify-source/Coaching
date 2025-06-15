@@ -18,7 +18,7 @@
   --color-nav-hover:  #B2C69C;
 }
 
-/* 3. Reset & basinställningar */
+/* 3. Reset & grundinställningar */
 * {
   margin: 0;
   padding: 0;
@@ -33,9 +33,13 @@ body {
 }
 
 /* 4. Header & nav */
+/* Gradient avslutar närmare vitt för tydligare toning */
 header.hero {
   background-image:
-    linear-gradient(rgba(178,172,136,0.8), rgba(218,212,176,0.8)),
+    linear-gradient(
+      rgba(178,172,136,0.8),
+      rgba(255,255,255,0.8)
+    ),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
@@ -88,8 +92,7 @@ header.hero .hero-content p {
 #content-frame {
   margin: 2rem auto;
   display: block;
-  width: 80vw;
-  max-width: 900px;
+  width: 80vw; max-width: 900px;
   border: none;
 }
 
@@ -124,8 +127,7 @@ header.hero .hero-content p {
   background: var(--color-primary);
   color: var(--color-logo);
   padding: 1.5rem 1rem;
-  width: 100%;
-  max-width: none;
+  width: 100%; max-width: none;
   margin: 0;
 }
 #testimonials h2 {
@@ -135,7 +137,7 @@ header.hero .hero-content p {
 /* 9. Testimonials-slider */
 .testimonial-slider {
   position: relative;
-  width: 56vw;       /* tidigare inställning */
+  width: 56vw;       /* redan 15% smalare */
   max-width: 900px;
   margin: 1rem auto;
 }
@@ -146,7 +148,7 @@ header.hero .hero-content p {
 }
 .testimonial {
   position: absolute;
-  top: 25%;         /* flyttat upp ytterligare två rader */
+  top: 15%;         /* flyttat upp ytterligare två textrader */
   left: 0;
   width: 100%;
   padding: 1rem;
