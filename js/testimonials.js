@@ -1,3 +1,4 @@
+// Plocka ut slidern och pilarna
 const slideContainer = document.querySelector('.testimonial-slide');
 const slides = Array.from(slideContainer.children);
 const prevBtn = document.querySelector('.left-arrow');
@@ -5,10 +6,10 @@ const nextBtn = document.querySelector('.right-arrow');
 
 let currentIndex = 0;
 const slideCount = slides.length;
-const displayTime = 10000; // 10 s i mitten
-const transitionTime = 600; // ms för övergång
+const displayTime = 10000;    // 10 000 ms = 10 sek vid vila
+const transitionTime = 600;   // 600 ms för själva transform-övergången
 
-// Flytta till given slide
+// Flytta slidern till vald index
 function goToSlide(idx) {
   slideContainer.style.transform = `translateX(-${idx * 100}%)`;
   currentIndex = idx;
@@ -17,29 +18,34 @@ function goToSlide(idx) {
 // Starta automatisk loop
 let autoTimer;
 function startAuto() {
+  // Kör nästa slide efter displayTime + transitionTime
   autoTimer = setInterval(() => {
-    let nextIndex = (currentIndex + 1) % slideCount;
+    const nextIndex = (currentIndex + 1) % slideCount;
     goToSlide(nextIndex);
   }, displayTime + transitionTime);
 }
+
+// Stoppa automatisk loop
 function stopAuto() {
   clearInterval(autoTimer);
 }
 
-// Manuell navigering
+// Klick på vänsterpil
 prevBtn.addEventListener('click', () => {
   stopAuto();
-  let prevIndex = (currentIndex - 1 + slideCount) % slideCount;
+  const prevIndex = (currentIndex - 1 + slideCount) % slideCount;
   goToSlide(prevIndex);
   startAuto();
 });
+
+// Klick på högerpil
 nextBtn.addEventListener('click', () => {
   stopAuto();
-  let nextIndex = (currentIndex + 1) % slideCount;
+  const nextIndex = (currentIndex + 1) % slideCount;
   goToSlide(nextIndex);
   startAuto();
 });
 
-// Initiering
+// Initiera slidern
 goToSlide(0);
 startAuto();
