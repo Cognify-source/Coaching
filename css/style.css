@@ -33,16 +33,17 @@ body {
 }
 
 /* 4. Header & nav */
-/* Relativ sökväg: från css/style.css gå upp en nivå till images/ */
+/* Overlay α = 0.8 för att tona ner bilden lite mer */
 header.hero {
   background-image:
-    linear-gradient(rgba(178,172,136,0.7), rgba(178,172,136,0.7)),
+    linear-gradient(rgba(178,172,136,0.8), rgba(178,172,136,0.8)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
   padding: 2rem 1rem;
   text-align: center;
-  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  position: fixed;
+  top: 0; left: 0; width: 100%; z-index: 1000;
 }
 .nav {
   display: inline-block;
@@ -170,9 +171,7 @@ form {
   display: grid; gap: 0.6rem;
   font-family: var(--font-body); font-size: 0.9rem;
 }
-label {
-  font-size: 0.9rem;
-}
+label { font-size: 0.9rem; }
 input, textarea {
   padding: 0.4rem 0.6rem; font-size: 0.9rem;
   border: 1px solid #ccc; border-radius: 4px;
@@ -183,9 +182,7 @@ button {
   font-family: var(--font-heading);
   background: var(--color-primary); color: var(--color-logo);
 }
-button:hover {
-  opacity: 0.9;
-}
+button:hover { opacity: 0.9; }
 
 /* 13. Footer */
 .footer {
