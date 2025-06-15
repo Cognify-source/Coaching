@@ -21,11 +21,13 @@
     </div>
   </header>
 
-  <!-- Innehålls-iframe -->
-  <iframe id="content-frame"
-          name="contentFrame"
-          src="om-mig.html"
-          frameborder="0"></iframe>
+  <!-- Innehålls‐iframe -->
+  <iframe
+    id="content-frame"
+    name="contentFrame"
+    src="om-mig.html"
+    frameborder="0"
+  ></iframe>
 
   <!-- Testimonials -->
   <section id="testimonials" class="section">
@@ -34,7 +36,7 @@
       <button class="arrow left-arrow">&#x25C0;</button>
       <div class="slide-window">
         <div class="testimonial-slide">
-          <!-- Här injekteras data/testimonials.html via JS -->
+          <!-- Här injekteras testimonials från data/testimonials.html -->
         </div>
       </div>
       <button class="arrow right-arrow">&#x25B6;</button>
@@ -46,6 +48,27 @@
     <p>&copy; 2025 Soul   Flow   Coaching</p>
   </footer>
 
+  <!-- 1) Testimonials‐loader -->
   <script src="js/testimonials.js" defer></script>
+  <!-- 2) Iframe‐resizer -->
+  <script>
+    let baseFrameHeight = null;
+    function resizeFrame() {
+      const iframe = document.getElementById('content-frame');
+      if (!iframe.contentWindow) return;
+      const doc = iframe.contentWindow.document;
+      const h = doc.body.scrollHeight;
+      if (baseFrameHeight === null) {
+        // Spara höjden första gången (om-mig-sidan)
+        baseFrameHeight = h;
+      }
+      // Använd alltid samma bas-höjd
+      iframe.style.height = baseFrameHeight + 'px';
+    }
+    window.addEventListener('load', resizeFrame);
+    document.getElementById('content-frame')
+            .addEventListener('load', resizeFrame);
+  </script>
+
 </body>
 </html>

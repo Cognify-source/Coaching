@@ -1,26 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
   const slideContainer = document.querySelector('.testimonial-slide');
-  fetch('data/testimonials.html')
-    .then(resp => resp.text())
+  if (!slideContainer) {
+    console.error('testimonial-slide container hittades inte!');
+    return;
+  }
+
+  fetch('./data/testimonials.html')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Kunne inte hämta testimonials.html – status ${response.status}`);
+      }
+      return response.text();
+    })
     .then(html => {
+      console.log('Testimonials HTML inläst:', html);
       slideContainer.innerHTML = html;
       initTestimonialsSlider();
     })
-    .catch(err => console.error('Error loading testimonials:', err));
+    .catch(err => {
+      console.error('Fel vid inläsning av testimonials:', err);
+    });
 });
 
 function initTestimonialsSlider() {
   const slides = Array.from(document.querySelectorAll('.testimonial'));
+  if (slides.length === 0) {
+    console.warn('Inga .testimonial-element att visa!');
+    return;
+  }
+
   let current = 0;
   const leftBtn  = document.querySelector('.left-arrow');
   const rightBtn = document.querySelector('.right-arrow');
 
-  function showSlide(index) {
+  function showSlide(idx) {
     slides.forEach((slide, i) => {
-      slide.style.opacity = (i === index ? '1' : '0');
-      slide.style.transform = (i === index
-        ? 'translateX(0)' 
-        : (i < index ? 'translateX(-100%)' : 'translateX(100%)'));
+      slide.style.opacity   = i === idx ? '1' : '0';
+      slide.style.transform = i === idx
+        ? 'translateX(0)'
+        : (i < idx ? 'translateX(-100%)' : 'translateX(100%)');
     });
   }
 
