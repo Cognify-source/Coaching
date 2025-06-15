@@ -33,14 +33,14 @@ body {
 }
 
 /* 4. Header & nav */
-/* Minska vertikal padding 50%: 0.1rem top/bottom, öka horisontell till 2rem */
+/* Tredubbla vertikal padding (0.3rem) och horisontell kvar (2rem) */
 header.hero {
   background-image:
     linear-gradient(rgba(138,132,96,0.8), rgba(215,215,215,0.8)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
-  padding: 0.1rem 2rem;  /* 0.1rem top/bottom, 2rem left/right */
+  padding: 0.3rem 2rem;  /* 0.3rem top/bottom, 2rem left/right */
   text-align: center;
   position: fixed;
   top: 0; left: 0;
@@ -70,17 +70,18 @@ header.hero {
 }
 
 /* 5. Logotyp & underrubrik */
-/* Halvera marginaler ovan/under loggan: 0.1rem/0.05rem */
+/* Ta bort all vertikal marginal mellan h1 och p */
 header.hero .hero-content h1,
 header.hero .hero-content p {
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+  margin: 0;
+  padding: 0;
 }
 .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 13rem;
-  margin: 0.1rem 0 0.05rem;
   text-transform: none;
 }
 .hero-content p {
