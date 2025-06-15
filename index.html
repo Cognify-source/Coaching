@@ -11,10 +11,10 @@
   <!-- Header / Hero -->
   <header class="hero">
     <nav class="nav">
-      <a href="#om-mig">Om mig</a>
-      <a href="#metod">Metod</a>
+      <a href="om-mig.html"   target="contentFrame">Om mig</a>
+      <a href="metod.html"    target="contentFrame">Metod</a>
       <a href="#testimonials">Testimonials</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="kontakt.html"  target="contentFrame">Kontakt</a>
     </nav>
     <div class="hero-content">
       <h1>Fredrik Ekholm Coaching</h1>
@@ -22,30 +22,13 @@
     </div>
   </header>
 
-  <!-- Om mig -->
-  <section id="om-mig" class="section">
-    <h2>Om mig</h2>
-    <p>
-      Jag heter Fredrik Ekholm och är certifierad coach med mångårig erfarenhet av
-      att guida människor till ökad självmedvetenhet och välmående. Min passion är
-      att hjälpa dig hitta balans mellan kropp, sinne och själ.
-    </p>
-  </section>
-
-  <!-- Metod -->
-  <section id="metod" class="section">
-    <h2>Coachingmetod</h2>
-    <p>
-      Jag arbetar med den evidensbaserade Internal Family Systems-metoden (IFS),
-      som handlar om att förstå och integrera våra inre delar för att skapa
-      helhet och harmoni. Du lär dig:
-    </p>
-    <ul>
-      <li>Identifiera och möta dina inre “delar”</li>
-      <li>Utveckla självledarskap och självempati</li>
-      <li>Bygga hållbara strategier för inre balans</li>
-    </ul>
-  </section>
+  <!-- Innehålls-iframe -->
+  <iframe
+    id="content-frame"
+    name="contentFrame"
+    src="om-mig.html"
+    frameborder="0"
+  ></iframe>
 
   <!-- Testimonials -->
   <section id="testimonials" class="section">
@@ -54,26 +37,20 @@
       <button class="arrow left-arrow">&#10094;</button>
       <div class="slide-window">
         <div class="testimonial-slide">
-          <!-- Mycket kort -->
           <div class="testimonial">
             <p>“Fantastiskt!”</p>
             <span>– Klient A</span>
           </div>
-          <!-- Medellång -->
           <div class="testimonial">
             <p>“Fredriks coaching var otroligt hjälpsam. Jag kände mig stärkt och mer närvarande i vardagen.”</p>
             <span>– Klient B</span>
           </div>
-          <!-- Flera meningar -->
           <div class="testimonial">
             <p>“Jag hade länge känt mig splittrad och osäker på hur jag skulle hantera stress. Genom Fredriks metod lärde jag mig möta mina inre delar med empati och hitta en lugn plats inom mig. Rekommenderas starkt!”</p>
             <span>– Klient C</span>
           </div>
-          <!-- Lång text -->
           <div class="testimonial">
-            <p>
-              “Efter flera års sökande på olika terapiformer och självhjälpsböcker, hittade jag äntligen ett arbete som talade direkt till mitt inre. Fredriks vägledning med fokus på delarna inom oss hjälpte mig att se mönster jag burit med mig sedan barndomen. Resultatet blev en djupare förståelse, ökad självkärlek och en varaktig känsla av inre frid jag tidigare bara drömt om.”
-            </p>
+            <p>“Efter flera års sökande på olika terapiformer och självhjälpsböcker, hittade jag äntligen ett arbete som talade direkt till mitt inre. Fredriks vägledning med fokus på delarna inom oss hjälpte mig att se mönster jag burit med mig sedan barndomen. Resultatet blev en djupare förståelse, ökad självkärlek och en varaktig känsla av inre frid jag tidigare bara drömt om.”</p>
             <span>– Klient D</span>
           </div>
         </div>
@@ -82,30 +59,21 @@
     </div>
   </section>
 
-  <!-- Kontakt -->
-  <section id="kontakt" class="section">
-    <h2>Kontakt</h2>
-    <form action="mailto:fredrik@ekholmcoaching.se" method="post" enctype="text/plain">
-      <label for="name">Namn</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">E-post</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Meddelande</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-      
-      <button type="submit">Skicka</button>
-    </form>
-    <p class="contact-info">
-      Eller mejla mig direkt på <a href="mailto:fredrik@ekholmcoaching.se">fredrik@ekholmcoaching.se</a>
-    </p>
-  </section>
-
+  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 Fredrik Ekholm Coaching</p>
   </footer>
 
   <script src="js/testimonials.js"></script>
+  <script>
+    // Justera iframe-höjd efter innehåll
+    function resizeFrame() {
+      const iframe = document.getElementById('content-frame');
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+    window.addEventListener('load', resizeFrame);
+    document.getElementById('content-frame')
+            .addEventListener('load', resizeFrame);
+  </script>
 </body>
 </html>

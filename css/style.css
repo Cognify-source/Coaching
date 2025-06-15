@@ -8,7 +8,7 @@ body {
   font-family: sans-serif;
   line-height: 1.6;
   color: #333;
-  padding-top: 160px; /* Lyft ner innehållet under sticky headern */
+  padding-top: 160px; /* Lyft ner allt under sticky header */
 }
 
 /* Sticky header */
@@ -28,7 +28,25 @@ header.hero {
   color: #333;
 }
 
-/* Sektioner */
+/* Hero-content */
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+}
+
+/* Iframe för innehåll */
+#content-frame {
+  width: 80vw;
+  max-width: 900px;
+  margin: 2rem auto;
+  display: block;
+  border: none;
+}
+
+/* Sektioner inuti iframe */
 .section {
   padding: 3rem 1rem;
   max-width: 800px;
@@ -49,22 +67,19 @@ header.hero {
 .slide-window {
   position: relative;
   overflow: hidden;
-  min-height: 120px; /* justera efter textmängd */
+  min-height: 120px;
 }
 .testimonial {
   position: absolute;
-  top: 50%;               /* flytta mitt i fönstret vertikalt */
+  top: 50%;
   left: 0;
   width: 100%;
-  box-sizing: border-box;
   padding: 1rem;
   background: transparent;
   border-radius: 8px;
   text-align: center;
   opacity: 0;
 }
-
-/* Textstyling */
 .testimonial p {
   margin-bottom: 0.5rem;
   font-style: italic;
@@ -72,7 +87,6 @@ header.hero {
 .testimonial span {
   font-size: 0.9rem;
   color: #555;
-  display: block;
 }
 
 /* Pilar */
@@ -93,7 +107,7 @@ header.hero {
 .right-arrow { right: -1.5rem; }
 .arrow:hover { background: rgba(255,255,255,1); }
 
-/* Kontaktformulär */
+/* Kontaktformulär (för kontaktsidan i iframe) */
 form {
   display: grid;
   gap: 0.8rem;
