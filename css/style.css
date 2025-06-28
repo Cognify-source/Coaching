@@ -113,7 +113,24 @@ header.hero .hero-content h1 {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  /* text-shadow borttagen för att inte konkurrera med bylinen */
+}
+
+/* 8. Om-mig-specifikt */
+#om-mig {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  text-align: left;
+}
+#om-mig .about-img {
+  width: 50%;
+  max-width: none;
+  height: auto;
+  border-radius: 8px;
+}
+#om-mig .om-mig-text {
+  width: 50%;
 }
 
 /* 9. Testimonials-sektionen */
