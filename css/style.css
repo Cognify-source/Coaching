@@ -8,7 +8,6 @@
   --font-logo:       'Cinzel Decorative', cursive;
   --font-heading:    'Montserrat', sans-serif;
   --font-body:       'Merriweather', serif;
-
   --color-bg:        #FAF9F6;
   --color-primary:   #B2AC88;
   --color-secondary: #E6E6FA;
@@ -43,7 +42,7 @@ header.hero {
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem; /* mindre vertikalt utrymme */
   text-align: center;
 }
 .nav {
@@ -80,8 +79,8 @@ header.hero .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin-top: 1.5em;
-  margin-bottom: 1em;
+  margin-top: 0.5em;    /* mindre luft ovan */
+  margin-bottom: 0.5em; /* mindre luft under */
   line-height: 1;
   text-transform: none;
   color: var(--color-logo);
@@ -91,8 +90,8 @@ header.hero .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   text-transform: uppercase;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0.25em;    /* mindre luft ovan */
+  margin-bottom: 0.25em; /* mindre luft under */
   line-height: 1;
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
