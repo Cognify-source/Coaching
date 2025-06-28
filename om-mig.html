@@ -6,14 +6,17 @@
   <title>Om mig – Soul Flow Coaching</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Samma styling som metod-sidan; text vänsterställd, bild floatar i högra hörnet */
+    /* Samma layout som metod-sidan: en kolumn text med bilden infälld absolut i nedre högra hörnet */
     #om-mig {
+      position: relative;
+      padding-right: 35%;
       text-align: left;
     }
     #om-mig .about-img {
-      float: right;
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
       width: 33%;
-      margin: 1rem 0 0 1rem;
       height: auto;
       border-radius: 8px;
     }
@@ -22,16 +25,19 @@
 <body>
   <section id="om-mig" class="section">
     <h2>Om mig</h2>
-    <img src="images/portratt.jpg" alt="Fredrik Ekholm" class="about-img">
     <p>
-      Mitt namn är Fredrik Ekholm och jag coachar företagare och ledare i beslutsprocesser och personlig utveckling. Med Internal Family Systems (IFS) som grund hjälper jag dig att utforska inre resurser och skapa hållbara strategier för framgång och välmående.
+      Mitt namn är Fredrik Ekholm och jag coachar företagare och ledare i beslutsprocesser och personlig utveckling. Med Internal Family Systems (IFS) som grund hjälper jag dig att utforska inre resurser och skapa hållbara strategier för välmående och framgång.
     </p>
     <p>
-      Jag inspireras av Jungs psykologiska perspektiv och buddhistiska mindfulness-principer, även om jag inte arbetar med dem direkt. Genom skräddarsydda sessioner, ofta riktade till VD:ar och ledningsgrupper, får du verktyg för bättre självledarskap, ökad klarhet och styrka i rollen.
+      Jag inspireras av Jungs psykologiska perspektiv och buddhistisk mindfulness, även om jag inte följer dem bokstavligt. I våra sessioner får du verktyg för bättre självledarskap, ökad klarhet och en stabil inre grund.
     </p>
     <p>
       Välkommen att ta nästa steg i din och företagets utveckling.
     </p>
+    <img
+      src="images/portratt.jpg"
+      alt="Fredrik Ekholm"
+      class="about-img">
   </section>
 </body>
 </html>
