@@ -8,9 +8,9 @@
 <body>
   <header class="hero">
     <nav class="nav">
-      <a href="om-mig.html">OM MIG</a>
-      <a href="metod.html">METOD</a>
-      <a href="kontakt.html">KONTAKT</a>
+      <a href="om-mig.html" target="content-frame">OM MIG</a>
+      <a href="metod.html" target="content-frame">METOD</a>
+      <a href="kontakt.html" target="content-frame">KONTAKT</a>
     </nav>
     <div class="hero-content">
       <h1>Soul Flow Coaching</h1>
@@ -18,7 +18,7 @@
     <p class="hero-byline">COACHING</p>
   </header>
 
-  <iframe id="content-frame" src="om-mig.html"></iframe>
+  <iframe id="content-frame" name="content-frame" src="om-mig.html"></iframe>
 
   <!-- Testimonials-slider -->
   <section id="testimonials">
@@ -32,21 +32,18 @@
 
   <script src="js/testimonials.js"></script>
   <script>
-    // Justerar iframe-höjden efter att nytt innehåll har laddats
+    // Justerar iframe-höjden automatiskt
     const iframe = document.getElementById('content-frame');
     function resizeIframe() {
       try {
         const doc = iframe.contentDocument || iframe.contentWindow.document;
-        // Ta dokumentets fulla scrollHeight
         const height = doc.documentElement.scrollHeight;
         iframe.style.height = height + 'px';
       } catch (err) {
         console.error('Kunde inte ändra iframe-höjd:', err);
       }
     }
-    // Kör vid varje inladdning av ny sida i iframe
     iframe.addEventListener('load', resizeIframe);
-    // Extra: justera även vid fönsterstorleksändring
     window.addEventListener('resize', resizeIframe);
   </script>
 </body>
