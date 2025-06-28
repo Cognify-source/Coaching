@@ -140,18 +140,20 @@ header.hero .hero-content h1 {
   background: var(--color-primary);
   color: var(--color-logo);
   padding: 1.5rem 1rem;
+  text-align: center;     /* Centrerar all text i testimonials-sektionen */
 }
 #testimonials h2 {
   color: var(--color-logo);
 }
-
-/* 10. Testimonials-slider */
 .testimonial-slider {
   position: relative;
   width: 56vw;
   max-width: 900px;
   margin: 1rem auto;
+  text-align: center;     /* Säkerställer att även sliderinnehållet centrerar */
 }
+
+/* 10. Testimonials-slider */
 .slide-window {
   position: relative;
   overflow: hidden;
