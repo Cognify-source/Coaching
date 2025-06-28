@@ -78,8 +78,8 @@ header.hero .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  /* Halverad marginal för mindre luft ovan/under loggan */
-  margin: 0.25em 0;
+  /* Halverad marginal igen: nu 50% mindre än tidigare */
+  margin: 0.125em 0;
   line-height: 1;
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
