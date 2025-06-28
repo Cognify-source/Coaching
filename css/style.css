@@ -8,7 +8,6 @@
   --font-logo:       'Cinzel Decorative', cursive;
   --font-heading:    'Montserrat', sans-serif;
   --font-body:       'Merriweather', serif;
-
   --color-bg:        #FAF9F6;
   --color-primary:   #B2AC88;
   --color-secondary: #E6E6FA;
@@ -29,7 +28,8 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   color: var(--color-text);
-  padding-top: 160px;
+  /* Minska padding-top så det motsvarar nya headerhöjden (~1rem+logga+underrubrik) */
+  padding-top: 120px;
 }
 
 /* 4. Header & nav */
@@ -39,7 +39,7 @@ header.hero {
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
-  padding: 2.6rem 2rem;
+  padding: 1rem 2rem; /* mindre vertikal padding */
   text-align: center;
   position: fixed;
   top: 0; left: 0;
@@ -82,8 +82,8 @@ header.hero .hero-content {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  margin-top: 1.5em;    /* luft ovan för rubriken */
+  margin-bottom: 1em;   /* luft under rubriken */
   line-height: 1;
   text-transform: none;
   color: var(--color-logo);
@@ -93,8 +93,8 @@ header.hero .hero-content {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   text-transform: uppercase;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0.5em;    /* luft ovanför underrubriken */
+  margin-bottom: 0.5em; /* luft under underrubriken */
   line-height: 1;
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
@@ -102,19 +102,19 @@ header.hero .hero-content {
 
 /* 6. Iframe för undersidor */
 #content-frame {
-  margin: 2rem auto;
+  margin: 0 auto 2rem; /* placera direkt under header */
   display: block;
   width: 80vw;
   max-width: 900px;
   border: none;
+  /* ingen höjd satt - låt innehållet bestämma */
 }
 
 /* 7. Gemensamma sektioner (t.ex. Om-mig, Metod, Kontakt) */
-/* Minska top-padding i sektionerna så texten inte börjar så långt ner */
 .section {
-  margin: 0 auto;
+  margin: 2rem auto;
   max-width: 800px;
-  padding: 1rem 1rem;  /* tidigare 3rem top, nu 1rem */
+  padding: 1rem; /* redan justerat tidigare */
 }
 .section h2 {
   font-family: var(--font-heading);
