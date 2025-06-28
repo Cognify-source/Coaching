@@ -78,13 +78,11 @@ header.hero .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  /* Ytterligare halverad marginal: nu 50% mindre än tidigare */
   margin: 0.0625em 0;
   line-height: 1;
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
 }
-/* Byline exakt samma som sektionernas rubriker */
 .hero-byline {
   font-family: var(--font-heading);
   font-size: 1.8rem;
@@ -116,6 +114,8 @@ header.hero .hero-content h1 {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  /* Text-skugga för att matcha byline */
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
 }
 
 /* 9. Testimonials-sektionen */
