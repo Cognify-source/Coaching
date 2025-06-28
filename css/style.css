@@ -37,7 +37,7 @@ header.hero {
   width: 100%;
   z-index: 1000;
   background-image:
-    linear-gradient(rgba(138,132,96,0.9), rgba(215,215,215,0.9)),
+    linear-gradient(rgba(138,132,96,0.7), rgba(215,208,180,0.7)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
