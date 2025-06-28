@@ -18,7 +18,12 @@
     <p class="hero-byline">COACHING</p>
   </header>
 
-  <iframe id="content-frame" name="content-frame" src="om-mig.html"></iframe>
+  <iframe
+    id="content-frame"
+    name="content-frame"
+    src="om-mig.html"
+    style="display:block; width:80vw; max-width:900px; height:800px; margin:0 auto 2rem; border:none;">
+  </iframe>
 
   <!-- Testimonials-slider -->
   <section id="testimonials">
@@ -31,24 +36,5 @@
   </section>
 
   <script src="js/testimonials.js"></script>
-  <script>
-    // Justerar iframe-höjden exakt efter innehållet
-    const iframe = document.getElementById('content-frame');
-    function resizeIframe() {
-      try {
-        // Nollställ höjden för korrekt mätning
-        iframe.style.height = 'auto';
-        const doc = iframe.contentDocument || iframe.contentWindow.document;
-        const height = doc.documentElement.scrollHeight;
-        iframe.style.height = height + 'px';
-      } catch (err) {
-        console.error('Kunde inte ändra iframe-höjd:', err);
-      }
-    }
-    // Kör vid varje inladdning av nytt innehåll
-    iframe.addEventListener('load', resizeIframe);
-    // Kör även vid fönsterstorleksändring för responsivitet
-    window.addEventListener('resize', resizeIframe);
-  </script>
 </body>
 </html>
