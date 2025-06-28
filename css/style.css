@@ -115,13 +115,18 @@ header.hero .hero-content h1 {
   margin-bottom: 1rem;
 }
 
-/* Indragna första rader i stycken */
-.section p {
+/* 8. Inga indrag på första paragrafen */
+.section p:first-of-type {
+  text-indent: 0;
+  margin-top: 1em;
+}
+/* Indrag på övriga paragrafer */
+.section p:not(:first-of-type) {
   text-indent: 1.5em;
   margin-top: 1em;
 }
 
-/* 8. Om-mig-specifikt */
+/* 9. Om-mig-specifikt */
 #om-mig {
   display: flex;
   flex-direction: row;
@@ -141,7 +146,7 @@ header.hero .hero-content h1 {
   flex: 1;
 }
 
-/* 9. Testimonials-sektionen */
+/* 10. Testimonials-sektionen */
 #testimonials {
   background: var(--color-primary);
   color: var(--color-logo);
@@ -159,7 +164,7 @@ header.hero .hero-content h1 {
   text-align: center;
 }
 
-/* 10. Testimonials-slider */
+/* 11. Testimonials-slider */
 .slide-window {
   position: relative;
   overflow: hidden;
@@ -184,7 +189,7 @@ header.hero .hero-content h1 {
   font-size: 0.9rem;
 }
 
-/* 11. Pilar */
+/* 12. Pilar */
 .arrow {
   position: absolute;
   top: 50%;
@@ -203,7 +208,7 @@ header.hero .hero-content h1 {
   color: var(--color-nav-hover);
 }
 
-/* 12. Formulär & kontakt-info */
+/* 13. Formulär & kontakt-info */
 form {
   display: grid;
   gap: 0.6rem;
@@ -236,7 +241,7 @@ button:hover {
   font-size: 0.9rem;
 }
 
-/* 13. Footer */
+/* 14. Footer */
 .footer {
   text-align: center;
   padding: 0.5rem 1rem;
