@@ -118,19 +118,21 @@ header.hero .hero-content h1 {
 /* 8. Om-mig-specifikt */
 #om-mig {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   align-items: flex-start;
   gap: 2rem;
-  text-align: left;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
 }
 #om-mig .about-img {
-  width: 50%;
-  max-width: none;
+  flex: 0 0 50%;
+  max-width: 50%;
   height: auto;
   border-radius: 8px;
 }
 #om-mig .om-mig-text {
-  width: 50%;
+  flex: 1;
 }
 
 /* 9. Testimonials-sektionen */
