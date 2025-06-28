@@ -6,22 +6,19 @@
   <title>Om mig – Soul Flow Coaching</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Återställ blocklayout och vänsterställd text */
+    /* Vänsterställd text och block-layout */
     #om-mig {
       display: block !important;
       text-align: left;
-      position: relative;
     }
-    /* Porträttbild flyter i nedre högra hörnet, 1/3 bredd,
-       och flyttas upp ca 1/3 av sin egen höjd */
+    /* Porträttbild floatar i högerkant och flyttas upp med transform */
     #om-mig .about-img {
       float: right;
       width: 33%;
-      margin: 0 0 0 1rem;
+      margin: 0 0 1rem 1rem;
       border-radius: 8px;
-      position: relative;
-      top: -33%; /* flytta upp bilden ca 1/3 av dess höjd */
       height: auto;
+      transform: translateY(-33.333%);
     }
   </style>
 </head>
