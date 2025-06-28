@@ -5,22 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Om mig – Soul Flow Coaching</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Slå av flex-layout och återställ vänsterställd text */
+    #om-mig {
+      display: block !important;
+      text-align: left;
+    }
+    /* Porträttbild flyter i nedre högra hörnet, 1/3 bredd */
+    #om-mig .about-img {
+      float: right;
+      width: 33%;
+      margin: 1rem 0 0 1rem;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
   <section id="om-mig" class="section">
-    <img src="images/portratt.jpg" alt="Fredrik Ekholm" class="about-img">
-    <div class="om-mig-text">
-      <h2>Om mig</h2>
-      <p>
-        Mitt namn är Fredrik Ekholm och jag coachar företagare och ledare i beslutsprocesser och personlig utveckling. Med Internal Family Systems (IFS) som grund hjälper jag dig att utforska inre resurser och skapa hållbara strategier för framgång och välmående.
-      </p>
-      <p>
-        Jag inspireras av Jungs psykologiska perspektiv och buddhistiska mindfulness-principer, även om jag inte arbetar med dem direkt. Genom skräddarsydda sessioner, ofta riktade till VD:ar och ledningsgrupper, får du verktyg för bättre självledarskap, ökad klarhet och styrka i rollen.
-      </p>
-      <p>
-        Välkommen att ta nästa steg i din och företagets utveckling.
-      </p>
-    </div>
+    <h2>Om mig</h2>
+    <p>
+      Mitt namn är Fredrik Ekholm och jag coachar företagare och ledare i beslutsprocesser och personlig utveckling. Med Internal Family Systems (IFS) som grund hjälper jag dig att utforska inre resurser och skapa hållbara strategier för framgång och välmående.
+    </p>
+    <p>
+      Jag inspireras av Jungs psykologiska perspektiv och buddhistiska mindfulness-principer, även om jag inte arbetar med dem direkt. Genom skräddarsydda sessioner, ofta riktade till VD:ar och ledningsgrupper, får du verktyg för bättre självledarskap, ökad klarhet och styrka i rollen.
+    </p>
+    <p>
+      Välkommen att ta nästa steg i din och företagets utveckling.
+    </p>
+    <img
+      src="images/portratt.jpg"
+      alt="Fredrik Ekholm"
+      class="about-img">
   </section>
 </body>
 </html>
