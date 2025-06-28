@@ -78,17 +78,18 @@ header.hero .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin: 0.5em 0;
+  /* Halverad marginal för mindre luft ovan/under loggan */
+  margin: 0.25em 0;
   line-height: 1;
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
 }
-header.hero .hero-content p {
+/* Byline med samma typografi som sektionernas rubriker */
+.hero-byline {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
-  margin: 0.25em 0;
-  line-height: 1;
+  margin: 0.5rem 0 1.5rem;
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
 }
@@ -114,17 +115,6 @@ header.hero .hero-content p {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1rem;
-}
-
-/* 8. Om-mig-specifikt */
-#om-mig {
-  text-align: center;
-}
-#om-mig img {
-  display: block;
-  margin: 2rem auto 0;
-  max-width: 200px;
-  border-radius: 8px;
 }
 
 /* 9. Testimonials-sektionen */
