@@ -60,10 +60,6 @@ header.hero {
   text-transform: uppercase;
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
 }
-.nav a:not(:last-child)::after {
-  content: "|";
-  margin-left: 0.75rem;
-}
 .nav a:hover {
   color: var(--color-nav-hover);
 }
@@ -130,22 +126,15 @@ header.hero .hero-content h1 {
 
 /* 8. Om-mig-specifikt */
 #om-mig {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 2rem;
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
+  /* återskapar en-kolumn-layout med bild floatande */
+  text-align: left;
 }
 #om-mig .about-img {
-  flex: 0 0 50%;
-  max-width: 50%;
+  float: right;
+  width: 33%;
+  margin: 1rem 0 1rem 1rem;
   height: auto;
   border-radius: 8px;
-}
-#om-mig .om-mig-text {
-  flex: 1;
 }
 
 /* 9. Testimonials-sektionen */
