@@ -133,31 +133,29 @@ header.hero .hero-content h1 {
   border-radius: 8px;
 }
 
-/* 9. Testimonials-sektionen (inverterade färger) */
+/* 9. Testimonials-sektionen (återställd) */
 #testimonials {
-  background: transparent;
-  color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-logo);
   padding: 1.5rem 1rem;
   text-align: center;
 }
 #testimonials h2 {
-  color: var(--color-primary);
+  color: var(--color-logo);
 }
-#testimonials .testimonial-slider {
+.testimonial-slider {
   position: relative;
   width: 56vw;
   max-width: 900px;
   margin: 1rem auto;
   text-align: center;
 }
-/* Text i testimonials */
-#testimonials .testimonial p,
-#testimonials .testimonial span {
-  color: var(--color-primary);
+.testimonial p,
+.testimonial span {
+  color: var(--color-logo);
 }
-/* Pilar i testimonials */
-#testimonials .arrow {
-  color: var(--color-primary);
+.arrow {
+  color: var(--color-logo);
 }
 
 /* 10. Testimonials-slider */
