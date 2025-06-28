@@ -37,7 +37,7 @@ header.hero {
   width: 100%;
   z-index: 1000;
   background-image:
-    linear-gradient(rgba(138,132,96,1.0), rgba(178,172,136,1.0)),
+    linear-gradient(rgba(138,132,96,0.8), rgba(215,215,215,0.8)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
@@ -98,7 +98,6 @@ header.hero .hero-content h1 {
 }
 
 /* 7. Sektioner (Om-mig, Metod, Kontakt) */
-/* All text i .section blir vänsterställd */
 .section {
   margin: 2rem auto;
   max-width: 800px;
@@ -108,17 +107,15 @@ header.hero .hero-content h1 {
 .section h2 {
   font-family: var(--font-heading);
   font-size: 1.8rem;
-  text-align: left;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
-/* Indragna första rader i stycken */
+/* Indragning av paragrafer */
 .section p:first-of-type {
   text-indent: 0;
   margin-top: 1em;
 }
-/* Indrag på övriga paragrafer */
 .section p:not(:first-of-type) {
   text-indent: 1.5em;
   margin-top: 1em;
@@ -126,7 +123,6 @@ header.hero .hero-content h1 {
 
 /* 8. Om-mig-specifikt */
 #om-mig {
-  /* återskapar en-kolumn-layout med bild floatande */
   text-align: left;
 }
 #om-mig .about-img {
@@ -137,22 +133,31 @@ header.hero .hero-content h1 {
   border-radius: 8px;
 }
 
-/* 9. Testimonials-sektionen */
+/* 9. Testimonials-sektionen (inverterade färger) */
 #testimonials {
-  background: var(--color-primary);
-  color: var(--color-logo);
+  background: transparent;
+  color: var(--color-primary);
   padding: 1.5rem 1rem;
   text-align: center;
 }
 #testimonials h2 {
-  color: var(--color-logo);
+  color: var(--color-primary);
 }
-.testimonial-slider {
+#testimonials .testimonial-slider {
   position: relative;
   width: 56vw;
   max-width: 900px;
   margin: 1rem auto;
   text-align: center;
+}
+/* Text i testimonials */
+#testimonials .testimonial p,
+#testimonials .testimonial span {
+  color: var(--color-primary);
+}
+/* Pilar i testimonials */
+#testimonials .arrow {
+  color: var(--color-primary);
 }
 
 /* 10. Testimonials-slider */
@@ -168,26 +173,16 @@ header.hero .hero-content h1 {
   width: 100%;
   padding: 1rem;
   opacity: 0;
-  text-align: center;
   transition: transform 0.5s, opacity 0.5s;
 }
-.testimonial p {
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-.testimonial span {
-  display: block;
-  font-size: 0.9rem;
-}
 
-/* 11. Pilar */
+/* 11. Pilar utanför testimonials */
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-60%);
   background: none;
   border: none;
-  color: var(--color-logo);
   font-size: 2rem;
   cursor: pointer;
   user-select: none;
