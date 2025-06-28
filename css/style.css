@@ -136,9 +136,13 @@ header.hero .hero-content h1 {
   border-radius: 8px;
 }
 
-/* 9. Testimonials-sektionen */
+/* 9. Testimonials-sektionen (omvänd gradient: ljus till mörk) */
 #testimonials {
-  background: var(--color-primary);
+  background-image:
+    linear-gradient(
+      rgba(198, 192, 156, 1.0),
+      rgba(138, 132, 96, 0.8)
+    );
   color: var(--color-logo);
   padding: 1.5rem 1rem;
   text-align: center;
