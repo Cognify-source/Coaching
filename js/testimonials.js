@@ -1,7 +1,6 @@
-// js/testimonials.js
 document.addEventListener('DOMContentLoaded', () => {
   const slideContainer = document.querySelector('.testimonial-slide');
-  // Hämtar testimonials från rätt sökväg
+  // Uppdaterad sökväg så den hämtar filen i roten, inte "/data"
   fetch('testimonials.html')
     .then(resp => {
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
@@ -18,14 +17,13 @@ function initTestimonialsSlider() {
   const slides   = Array.from(document.querySelectorAll('.testimonial'));
   const leftBtn  = document.querySelector('.left-arrow');
   const rightBtn = document.querySelector('.right-arrow');
-  let current = 0;
-  let interval;
+  let current = 0, interval;
 
-  // Grund-setup: första slide synlig, övriga placerade utanför till höger
+  // Placera första slide synlig, övriga utanför till höger
   slides.forEach((slide, i) => {
     Object.assign(slide.style, {
       position:   'absolute',
-      top:        '0',
+      top:        '5%',
       left:       '0',
       width:      '100%',
       transition: 'transform 0.5s ease, opacity 0.5s ease',
@@ -36,29 +34,25 @@ function initTestimonialsSlider() {
 
   function showForward(nextIndex) {
     if (nextIndex === current) return;
-    const outgoing = slides[current];
-    const incoming = slides[nextIndex];
-
-    // 1) Placera incoming direkt utanför vyn till höger (utan transition)
+    const outgoing = slides[current], incoming = slides[nextIndex];
     incoming.style.transition = 'none';
     incoming.style.transform  = 'translateX(100%)';
     incoming.style.opacity    = '1';
+    incoming.offsetHeight; // tvinga reflow
 
-    // 2) Tvinga reflow
-    incoming.offsetHeight;
-
-    // 3) Återställ transition och animera in/ut
     incoming.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
     incoming.style.transform  = 'translateX(0)';
     outgoing.style.transform  = 'translateX(-100%)';
     outgoing.style.opacity    = '0';
 
-    // 4) Efter animationen, reset outgoing till 100% igen så den är redo nästa gång
     setTimeout(() => {
       Object.assign(outgoing.style, {
         transition: 'none',
-        transform:  'translateX(100%)'
+        transform:  'translateX(100%)',
+        opacity:    '0'
       });
+      outgoing.offsetHeight;
+      outgoing.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
     }, 500);
 
     current = nextIndex;
@@ -66,13 +60,10 @@ function initTestimonialsSlider() {
 
   function showBackward(prevIndex) {
     if (prevIndex === current) return;
-    const outgoing = slides[current];
-    const incoming = slides[prevIndex];
-
+    const outgoing = slides[current], incoming = slides[prevIndex];
     incoming.style.transition = 'none';
     incoming.style.transform  = 'translateX(-100%)';
     incoming.style.opacity    = '1';
-
     incoming.offsetHeight;
 
     incoming.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
@@ -83,34 +74,25 @@ function initTestimonialsSlider() {
     setTimeout(() => {
       Object.assign(outgoing.style, {
         transition: 'none',
-        transform:  'translateX(-100%)'
+        transform:  'translateX(-100%)',
+        opacity:    '0'
       });
+      outgoing.offsetHeight;
+      outgoing.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
     }, 500);
 
     current = prevIndex;
   }
 
-  function next() {
-    const nextIndex = (current + 1) % slides.length;
-    showForward(nextIndex);
-  }
-
-  function prev() {
-    const prevIndex = (current - 1 + slides.length) % slides.length;
-    showBackward(prevIndex);
-  }
+  function next() { showForward((current + 1) % slides.length); }
+  function prev() { showBackward((current - 1 + slides.length) % slides.length); }
 
   leftBtn.addEventListener('click', () => {
-    clearInterval(interval);
-    prev();
-    interval = setInterval(next, 10000);
+    clearInterval(interval); prev(); interval = setInterval(next, 10000);
   });
   rightBtn.addEventListener('click', () => {
-    clearInterval(interval);
-    next();
-    interval = setInterval(next, 10000);
+    clearInterval(interval); next(); interval = setInterval(next, 10000);
   });
 
-  // Starta auto-scroll framåt
   interval = setInterval(next, 10000);
 }
