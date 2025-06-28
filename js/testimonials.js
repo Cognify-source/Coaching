@@ -1,7 +1,8 @@
 // js/testimonials.js
 document.addEventListener('DOMContentLoaded', () => {
   const slideContainer = document.querySelector('.testimonial-slide');
-  fetch('/data/testimonials.html')
+  // Hämtar testimonials från rätt sökväg
+  fetch('testimonials.html')
     .then(resp => {
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       return resp.text();
@@ -54,12 +55,10 @@ function initTestimonialsSlider() {
 
     // 4) Efter animationen, reset outgoing till 100% igen så den är redo nästa gång
     setTimeout(() => {
-      outgoing.style.transition = 'none';
-      outgoing.style.transform  = 'translateX(100%)';
-      outgoing.style.opacity    = '0';
-      // reflow och återställ transition
-      outgoing.offsetHeight;
-      outgoing.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+      Object.assign(outgoing.style, {
+        transition: 'none',
+        transform:  'translateX(100%)'
+      });
     }, 500);
 
     current = nextIndex;
@@ -73,18 +72,19 @@ function initTestimonialsSlider() {
     incoming.style.transition = 'none';
     incoming.style.transform  = 'translateX(-100%)';
     incoming.style.opacity    = '1';
+
     incoming.offsetHeight;
+
     incoming.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
     incoming.style.transform  = 'translateX(0)';
     outgoing.style.transform  = 'translateX(100%)';
     outgoing.style.opacity    = '0';
 
     setTimeout(() => {
-      outgoing.style.transition = 'none';
-      outgoing.style.transform  = 'translateX(-100%)';
-      outgoing.style.opacity    = '0';
-      outgoing.offsetHeight;
-      outgoing.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+      Object.assign(outgoing.style, {
+        transition: 'none',
+        transform:  'translateX(-100%)'
+      });
     }, 500);
 
     current = prevIndex;
