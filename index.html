@@ -15,7 +15,7 @@
     <div class="hero-content">
       <h1>Soul Flow Coaching</h1>
     </div>
-    <p class="hero-byline">Coaching för balans, harmoni och inre frid.</p>
+    <p class="hero-byline">COACHING</p>
   </header>
 
   <iframe id="content-frame" name="content-frame" src="om-mig.html"></iframe>
@@ -32,13 +32,13 @@
 
   <script src="js/testimonials.js"></script>
   <script>
-    // Justerar iframe-höjden automatiskt
+    // Justerar iframe-höjden med +20% extra utrymme
     const iframe = document.getElementById('content-frame');
     function resizeIframe() {
       try {
         const doc = iframe.contentDocument || iframe.contentWindow.document;
-        const height = doc.documentElement.scrollHeight;
-        iframe.style.height = height + 'px';
+        const contentHeight = doc.documentElement.scrollHeight;
+        iframe.style.height = (contentHeight * 1.2) + 'px';
       } catch (err) {
         console.error('Kunde inte ändra iframe-höjd:', err);
       }
