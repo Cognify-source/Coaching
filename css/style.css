@@ -8,6 +8,7 @@
   --font-logo:       'Cinzel Decorative', cursive;
   --font-heading:    'Montserrat', sans-serif;
   --font-body:       'Merriweather', serif;
+
   --color-bg:        #FAF9F6;
   --color-primary:   #B2AC88;
   --color-secondary: #E6E6FA;
@@ -28,23 +29,22 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   color: var(--color-text);
-  /* Minska padding-top så det motsvarar nya headerhöjden (~1rem+logga+underrubrik) */
-  padding-top: 120px;
 }
 
 /* 4. Header & nav */
 header.hero {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
   background-image:
     linear-gradient(rgba(138,132,96,0.8), rgba(215,215,215,0.8)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
-  padding: 1rem 2rem; /* mindre vertikal padding */
+  padding: 1rem 2rem;
   text-align: center;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 1000;
 }
 .nav {
   display: inline-block;
@@ -54,12 +54,12 @@ header.hero {
 .nav a {
   display: inline-block;
   padding: 0.5rem 1rem;
+  margin: 0 0.75rem;
   text-decoration: none;
   color: var(--color-logo);
   font-family: var(--font-heading);
   font-size: 1.125rem;
   text-transform: uppercase;
-  margin: 0 0.75rem;
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
 }
 .nav a:not(:last-child)::after {
@@ -72,29 +72,27 @@ header.hero {
 
 /* 5. Logotyp & underrubrik */
 header.hero .hero-content {
-  position: relative;
-  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.hero-content h1 {
+header.hero .hero-content h1 {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin-top: 1.5em;    /* luft ovan för rubriken */
-  margin-bottom: 1em;   /* luft under rubriken */
+  margin-top: 1.5em;
+  margin-bottom: 1em;
   line-height: 1;
   text-transform: none;
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
 }
-.hero-content p {
+header.hero .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   text-transform: uppercase;
-  margin-top: 0.5em;    /* luft ovanför underrubriken */
-  margin-bottom: 0.5em; /* luft under underrubriken */
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   line-height: 1;
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
@@ -102,19 +100,18 @@ header.hero .hero-content {
 
 /* 6. Iframe för undersidor */
 #content-frame {
-  margin: 0 auto 2rem; /* placera direkt under header */
+  margin: 0 auto 2rem;
   display: block;
   width: 80vw;
   max-width: 900px;
   border: none;
-  /* ingen höjd satt - låt innehållet bestämma */
 }
 
-/* 7. Gemensamma sektioner (t.ex. Om-mig, Metod, Kontakt) */
+/* 7. Sektioner (Om-mig, Metod, Kontakt) */
 .section {
   margin: 2rem auto;
   max-width: 800px;
-  padding: 1rem; /* redan justerat tidigare */
+  padding: 1rem;
 }
 .section h2 {
   font-family: var(--font-heading);
@@ -132,7 +129,6 @@ header.hero .hero-content {
   display: block;
   margin: 2rem auto 0;
   max-width: 200px;
-  height: auto;
   border-radius: 8px;
 }
 
@@ -141,9 +137,6 @@ header.hero .hero-content {
   background: var(--color-primary);
   color: var(--color-logo);
   padding: 1.5rem 1rem;
-  width: 100%;
-  max-width: none;
-  margin: 0;
 }
 #testimonials h2 {
   color: var(--color-logo);
@@ -191,7 +184,6 @@ header.hero .hero-content {
   font-size: 2rem;
   cursor: pointer;
   user-select: none;
-  padding: 0;
   z-index: 1001;
 }
 .left-arrow  { left: -1.5rem; }
@@ -208,8 +200,7 @@ form {
 label {
   font-size: 0.9rem;
 }
-input,
-textarea {
+input, textarea {
   padding: 0.4rem 0.6rem;
   font-size: 0.9rem;
   border: 1px solid #ccc;
