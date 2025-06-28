@@ -31,14 +31,17 @@ body {
 }
 
 /* 4. Header & nav */
+/* Bakgrundsbilden tas bort, ersätts med svag gradient från ursprungsfärg till 60 ljusare */
 header.hero {
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
   background-image:
-    linear-gradient(rgba(138,132,96,0.8), rgba(215,215,215,0.8)),
-    url('../images/IMG_4450.jpg');
+    linear-gradient(
+      rgba(138, 132, 96, 0.8),
+      rgba(198, 192, 156, 1.0)
+    );
   background-size: cover;
   background-position: center;
   padding: 0.5rem 2rem;
@@ -133,7 +136,7 @@ header.hero .hero-content h1 {
   border-radius: 8px;
 }
 
-/* 9. Testimonials-sektionen (återställd) */
+/* 9. Testimonials-sektionen */
 #testimonials {
   background: var(--color-primary);
   color: var(--color-logo);
