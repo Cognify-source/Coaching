@@ -8,6 +8,7 @@
   --font-logo:       'Cinzel Decorative', cursive;
   --font-heading:    'Montserrat', sans-serif;
   --font-body:       'Merriweather', serif;
+
   --color-bg:        #FAF9F6;
   --color-primary:   #B2AC88;
   --color-secondary: #E6E6FA;
@@ -70,7 +71,6 @@ header.hero {
 }
 
 /* 5. Logotyp & underrubrik */
-/* Tar bort gap, styr avstånd med margin */
 header.hero .hero-content {
   position: relative;
   z-index: 1000;
@@ -82,25 +82,22 @@ header.hero .hero-content {
   font-family: var(--font-logo) !important;
   font-weight: normal;
   font-size: 7rem;
-  margin-top: 3em;    /* extra luft ovanför loggan */
-  margin-bottom: 2em; /* luft under loggan */
+  margin-top: 2em;
+  margin-bottom: 1em;
   line-height: 1;
   text-transform: none;
+  color: var(--color-logo);
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
 }
 .hero-content p {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   text-transform: uppercase;
-  margin-top: 1em;    /* luft ovan underrubriken */
-  margin-bottom: 1em; /* luft under underrubriken */
+  margin-top: 1em;
+  margin-bottom: 1em;
   line-height: 1;
-}
-header.hero .hero-content h1,
-header.hero .hero-content p {
   color: var(--color-logo);
   text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
-  margin: 0;
-  padding: 0;
 }
 
 /* 6. Iframe för undersidor */
@@ -112,11 +109,12 @@ header.hero .hero-content p {
   border: none;
 }
 
-/* 7. Sektioner */
+/* 7. Gemensamma sektioner (t.ex. Om-mig, Metod, Kontakt) */
+/* Minska top-padding i sektionerna så texten inte börjar så långt ner */
 .section {
   margin: 0 auto;
   max-width: 800px;
-  padding: 3rem 1rem;
+  padding: 1rem 1rem;  /* tidigare 3rem top, nu 1rem */
 }
 .section h2 {
   font-family: var(--font-heading);
@@ -126,7 +124,7 @@ header.hero .hero-content p {
   margin-bottom: 1rem;
 }
 
-/* 8. Om-mig */
+/* 8. Om-mig-specifikt */
 #om-mig {
   text-align: center;
 }
