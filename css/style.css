@@ -37,7 +37,7 @@ header.hero {
   width: 100%;
   z-index: 1000;
   background-image:
-    linear-gradient(rgba(138,132,96,0.7), rgba(215,208,180,0.7)),
+    linear-gradient(rgba(138,132,96,0.8), rgba(215,215,215,0.8)),
     url('../images/IMG_4450.jpg');
   background-size: cover;
   background-position: center;
@@ -115,6 +115,12 @@ header.hero .hero-content h1 {
   margin-bottom: 1rem;
 }
 
+/* Indragna första rader i stycken */
+.section p {
+  text-indent: 1.5em;
+  margin-top: 1em;
+}
+
 /* 8. Om-mig-specifikt */
 #om-mig {
   display: flex;
@@ -140,7 +146,7 @@ header.hero .hero-content h1 {
   background: var(--color-primary);
   color: var(--color-logo);
   padding: 1.5rem 1rem;
-  text-align: center;     /* Centrerar all text i testimonials-sektionen */
+  text-align: center;
 }
 #testimonials h2 {
   color: var(--color-logo);
@@ -150,7 +156,7 @@ header.hero .hero-content h1 {
   width: 56vw;
   max-width: 900px;
   margin: 1rem auto;
-  text-align: center;     /* Säkerställer att även sliderinnehållet centrerar */
+  text-align: center;
 }
 
 /* 10. Testimonials-slider */
